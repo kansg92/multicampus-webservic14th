@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Form Tag</h1>
+	<!-- register2 로 post방식으로 보내기.  -->
+	<!-- register2 로 보내기 위해서는 java에서 프로그램이 되어야함. -->
+	<form action="register2" method="post">
+		<fieldset>
+			<legend>회원가입</legend>
+			ID<input type="text" name="id"><br>
+			PWD<input type="password" name="pwd"><br>
+			AGE<input type="number" name="age"><br>
+			BIRTH<input type="date" name="birth"><br>
+			GENDER<br>
+			<!-- radio : n개중 1개만 선택 가능.(마우스 체크통해서) 다중선택X -->
+			<input type="radio" name="gender" value="f">Female<br>
+			<input type="radio" name="gender" value="m">Male<br>
+			<input type="radio" name="gender" value="a">Aje<br>
+			HOBBY<br>
+			<!-- checkbox : n개중 n개 선택 가능.(마우스 체크통해서) 다중선택O -->			
+			<input type="checkbox" name="hobby" value="s">Study<br>
+			<input type="checkbox" name="hobby" value="t">Train<br>
+			<input type="checkbox" name="hobby" value="e">Eat<br>
+			Car<br>
+			<!-- select : 옵션중 1개 선택 가능  -->
+			<select name="car">
+				<option value="k3">k3</option>
+				<option value="k5">k5</option>
+				<option value="k7">k7</option>
+			</select><br>
+			Resume<br>
+			<textarea name="resume" rows="10" cols="100"></textarea><br>
+			<!-- hidden : 화면상 보이지 않는것.  -->
+			<input type="hidden" name="loginid" value="kan"><br>
+			<!-- range : 범위 바를 만들어줌.  -->
+			<input type="range" name="range" size="10" step="1">
+		</fieldset>
+		<!-- submit : 서버로 보내기..  -->
+		<input type="submit" value="REGISTER">
+		<!-- reset : 작성된 내용 모두 지우기.  -->
+		<input type="reset" value="RESET">
+	</form>
+</body>
+</html>

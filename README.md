@@ -20,4 +20,6 @@
 
 ## WEB
 
+- [html기초 태그, JSP파일 연동하기](web/day02/)
+
 ## Project

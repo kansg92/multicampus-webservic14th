@@ -1,0 +1,8 @@
+/**
+ * 
+ */
+ 
+ 
+ 	function go(){
+		alert("Clicked");
+	};
