@@ -21,5 +21,6 @@
 ## WEB
 
 - [html기초 태그, JSP파일 연동하기](web/day02/)
+- [html기초 태그, CSS 기초](web/day03/)
 
 ## Project
