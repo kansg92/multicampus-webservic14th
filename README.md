@@ -22,5 +22,8 @@
 
 - [html기초 태그, JSP파일 연동하기](web/day02/)
 - [html기초 태그, CSS 기초](web/day03/)
+- [반응형웹 만들어보기 기초!](web/day04/)
+- [thymleaf 활용하여 페이지 만들기.](web/day045/)
+- [boottrat 활용해서 웹페이지 만들기](web/day047/)
 
 ## Project
