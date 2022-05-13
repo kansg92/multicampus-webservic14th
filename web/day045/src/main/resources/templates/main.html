@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!-- thymeleaf를 html에서 사용.  -->
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel = "stylesheet" href="css/main.css">
+</head>
+<body>
+	<header>
+		<h1><a href="/">Shopping Mall</a></h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="home">home</a></li>
+			<li><a href="food">food</a></li>
+			<li><a href="wear">wear</a></li>		
+			<li><a href="media">Media</a></li>	
+		</ul>
+	</nav>
+	<section th:include="${center}">	
+	</section>
+	<footer></footer>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<html xmlns:th="http://www.thymeleaf.org">
+
+<aside id="left_aside">
+	<ul>
+		<li><a href="home1">hello1</a></li>
+		<li><a href="home2">hello2</a></li>
+		<li><a href="home3">hello3</a></li>
+	</ul>
+</aside>
+<aside id="right_aside" th:include="${subcenter} ? ${subcenter} : @{home/homemain}">
+</aside>

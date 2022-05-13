@@ -1,0 +1,82 @@
+@charset "EUC-KR";
+
+/* Global CSS start................................... */
+*{
+	margin:0;
+	padding:0;
+}
+a{
+	text-decoration: none;
+	color:black;
+}
+ul,ol{
+	list-style: none;
+}
+/* Global CSS end................................... */
+
+/* header CSS start................................... */
+header{
+	width:600px;
+	height:100px;
+	background-color: green;
+	margin:0 auto;
+}
+
+header > h1{
+	text-align: center;
+	line-height: 100px;
+}
+/* header CSS end................................... */
+
+/* nav CSS start................................... */
+nav{
+	width:600px;
+	height:40px;
+	background-color: orange;
+	margin:0 auto;
+}
+nav > ul {
+	width:500px;
+	margin:0 auto;
+}
+nav > ul > li {
+	float:left;
+	width: 25%;
+	line-height: 40px;
+}
+nav > ul > li > a{
+	display: block;
+	text-align:center;
+}
+
+/*nav CSS end................................... */
+
+/* section CSS start................................... */
+section{
+	width:600px;
+	height:500px;
+	background-color: gray;
+	margin:0 auto;
+}
+section > .center{
+	width:550px;
+	height:450px;
+	background-color: white;
+	display:inline-block;
+	margin:25px;
+	
+}
+
+/* section CSS end................................... */
+
+/* footer CSS start................................... */
+footer{
+	width:600px;
+	height:40px;
+	background-color: black;
+	margin:0 auto;
+}
+/* footer CSS end................................... */
+
+
+
