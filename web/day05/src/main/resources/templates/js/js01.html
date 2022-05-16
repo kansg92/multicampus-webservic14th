@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+<style>
+	#hh2{
+		background-color: green; 
+		color:tomato;
+	}
+</style>
+<script>
+
+function h2(){
+	alert('Alert ......................');
+	const h2 = document.querySelector('#hh2');
+	h2.innerText = 'Clicked!!';
+};
+
+window.onload = function(){
+	var h3 = document.querySelector('#hh3');
+	var i = 10;
+	var j = 20;
+	var result = i * j;
+	h3.innerText = 'result3: ' + result;
+
+};
+		
+</script>
+<h1>JS01 Main</h1>
+<button onclick="h2()">Click</button>
+<h2 id="hh2">Header2</h2>
+<h3 id="hh3">Header3</h3>

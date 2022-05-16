@@ -1,0 +1,126 @@
+<meta charset="UTF-8">
+<script>
+
+
+function inputNum1(){
+	document.querySelector('#screen').value += 1;
+};
+function inputNum2(){
+	document.querySelector('#screen').value += 2;
+};
+function inputNum3(){
+	document.querySelector('#screen').value += 3;
+};
+function inputNum4(){
+	document.querySelector('#screen').value += 4;
+};
+function inputNum5(){
+	document.querySelector('#screen').value += 5;
+};
+function inputNum6(){
+	document.querySelector('#screen').value += 6;
+};
+function inputNum7(){
+	document.querySelector('#screen').value += 7;
+};
+
+function inputNum8(){
+	document.querySelector('#screen').value += 8;
+};
+function inputNum9(){
+	document.querySelector('#screen').value += 9;
+};
+function inputNum0(){
+	document.querySelector('#screen').value += 0;
+};
+function inputdot(){
+	document.querySelector('#screen').value += '.';
+};
+function removeAll(){
+	document.querySelector('#screen').value = '';
+};
+function qqq(){
+	return;
+};
+function percent(){
+	document.querySelector('#screen').value += '%';
+};
+function divide(){
+	document.querySelector('#screen').value += '/';
+};
+function times(){
+	document.querySelector('#screen').value += '*';
+};
+function minus(){
+	document.querySelector('#screen').value += '-';
+};
+function plus(){
+	document.querySelector('#screen').value += '+';
+};
+function deleteobj(){
+	let data = document.querySelector('#screen').value;
+	data = data.slice(0, -1);
+	return data;
+};
+function result(){  
+	let data = document.querySelector('#screen').value;
+	document.querySelector('#resultScreen').value = `result: ${eval(data)}`;
+};
+
+
+
+</script>
+
+
+<style>
+	table {
+		border : 1px solid black;
+	}
+	table > tr > td {
+		border : 1px solid blakc;
+	}	
+	
+</style>
+
+
+
+<h1>JS07 Main</h1>
+
+<table>
+	<tr>
+		<td colspan="4"><input type="text" id="screen"></td>
+	</tr>
+	<tr>
+		<td colspan="4"><input type="text" id="resultScreen"></td>
+	</tr>
+	<tr>
+		<td><button onclick="removeAll()" class="call">AC</button></td>
+		<td><button onclick="qqq()" class="call">()</button></td>
+		<td><button onclick="percent()" class="call">%</button></td>
+		<td><button onclick="divide()" class="call">/</button></td>
+	</tr>
+	<tr>
+		<td><button onclick="inputNum7()" class="num">7</button></td>
+		<td><button onclick="inputNum8()"class="num">8</button></td>
+		<td><button onclick="inputNum9()" class="num">9</button></td>
+		<td><button onclick="times()" class="call">x</button></td>
+	</tr>
+	<tr>
+		<td><button onclick="inputNum4()" class="num">4</button></td>
+		<td><button onclick="inputNum5()" class="num">5</button></td>
+		<td><button onclick="inputNum6()" class="num">6</button></td>
+		<td><button onclick="minus()" class="call">-</button></td>
+	</tr>
+	<tr>
+		<td><button onclick="inputNum1()" class="num">1</button></td>
+		<td><button onclick="inputNum2()"class="num">2</button></td>
+		<td><button onclick="inputNum3()" class="num">3</button></td>
+		<td><button onclick="plus()" class="call">+</button></td>
+	</tr>
+	<tr>
+		<td><button onclick="inputNum0()" class="num">0</button></td>
+		<td><button onclick="inputdot()"class="num">.</button></td>
+		<td><button onclick="deleteobj()" class="num">c</button></td>
+		<td><button onclick="result()" class="call">=</button></td>
+	</tr>
+</table>

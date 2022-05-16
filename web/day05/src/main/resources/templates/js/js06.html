@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+<script>
+function calc(){
+	const data = document.querySelector('#data').value;
+	if(data == '' || data == null){
+		document.querySelector('#result').innerText = 'Bye';
+		return;
+	}; 
+	// eval : String으로 들어간 것을 연산해줌.
+	let result = eval(data);
+	if(!isFinite(result)){
+		result = 'Input error';
+	};
+	
+	document.querySelector('#result').innerText = result;
+	document.querySelector('#data').value = '';
+};
+
+</script>
+
+
+<h1>JS06 Main</h1>
+<input type ="text" id ="data" > 
+<button onclick="calc();">Calc</button>
+<h3 id ="result"></h3>
