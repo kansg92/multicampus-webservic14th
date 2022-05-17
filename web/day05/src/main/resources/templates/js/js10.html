@@ -1,0 +1,19 @@
+<meta charset="UTF-8">
+
+<script>
+window.onload = function (){
+	var hh1 = document.querySelector('#hh1');
+	
+	var s1 = setInterval(function(){
+		var txt = hh1.innerHTML;
+		txt += "*";
+		hh1.innerHTML = txt;
+	},500);	
+	setTimeout(function(){
+		clearInterval(s1);
+		location.href="https:/www.naver.com"
+	},5000);
+};
+</script>
+<h1>JS10 Main</h1>
+<h1 id="hh1"></h1>

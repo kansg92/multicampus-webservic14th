@@ -1,0 +1,16 @@
+<meta charset="UTF-8">
+<script>
+$(document).ready(function(){
+	$('h1').css('color', 'coral');
+	$("#hh1").html('<a href="#">Click</a>');
+	var txt = $('h1').eq(0).text();
+	$('h1').eq(1).text(txt);
+	$('h1 a').click(function(){
+		$('h1 a').text('clicked!!')
+	});
+});
+</script>
+<h1>jQ01 Main</h1>
+
+<h1>Header1</h1>
+<h1 id ="hh1">Header2</h1>

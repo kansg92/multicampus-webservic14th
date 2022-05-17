@@ -1,3 +1,41 @@
 <meta charset="UTF-8">
 
+<script>
+window.onload = function (){
+	var c1 = document.querySelector('#c1');
+	var c2 = document.querySelector('#c2');
+	var c3 = document.querySelector('h2 a');
+	var h1 = document.querySelector('h1'); 	
+	
+	h1.addEventListener("click", function(){
+		var c = prompt("숫자를 입력 하세요.", 0);
+		this.innerHTML = c;
+	});
+	
+	c1.addEventListener("click", function(){
+		h1.innerText = "Clicked C1 !!!!"
+	});
+	c2.onclick = (function(){
+		var c = confirm('회원가입 가시겠습니까?');
+		
+		if (c === true){
+			location.href='/';
+		};
+	});
+	c3.onclick = (function(){
+		var c = confirm('네이버로 가시겠습니까?');
+		
+		if (c === true){
+			location.href='https://www.naver.com';
+		};
+	});
+};
+</script>
+
+
+
 <h1>JS09 Main</h1>
+<button id = "c1">Click1</button>
+<button id = "c2">Click2</button>
+<h2><a id ="c3" href="#">Click</a></h2>
+

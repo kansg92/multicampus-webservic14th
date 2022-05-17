@@ -1,0 +1,121 @@
+<meta charset="UTF-8">
+<style>
+#jq04_header {
+	color : coral;
+	text-align: center;
+};
+#join_maindiv{
+	margin-left: 120px;
+}
+.join_span{
+	color:red;
+}
+</style>
+
+<script>
+$(document).ready(function(){
+	
+	
+	
+	
+	$('button').click(function(){
+		var id = $('input[name="id"]').val();
+		var pwd = $('input[name="pwd"]').val();
+		var vpwd = $('input[name="vpwd"]').val();
+		var name = $('input[name="name"]').val();
+		var birth = $('input[name="birth"]').val();
+		var phone = $('input[name="phone"]').val();
+		// LOGIN 버튼 클릭 시
+		// id 와 pwd 공란인지 확인 후
+		// focus 이동 및 span 메시지 출력
+		if ( id == ''){
+			$('input[name="id"]').focus();
+			$('#sid').text('필수정보입니다.');
+			return;
+		}
+		if ( pwd == ''){
+			$('input[name="pwd"]').focus();
+			$('#spwd').text('필수정보입니다.');
+			return;
+		}
+		if ( vpwd == ''){
+			$('input[name="vpwd"]').focus();
+			$('#svpwd').text('필수정보입니다.');
+			return;
+		}
+		if ( pwd != vpwd){
+			$('input[name="vpwd"]').focus();
+			$('#svpwd').text('비밀번호가 다릅니다. 다시확인하세요.');
+		}
+		if ( name == ''){
+			$('input[name="name"]').focus();
+			$('#sname').text('필수정보입니다.');
+			return;
+		}
+		if ( birth == ''){
+			$('input[name="birth"]').focus();
+			$('#sbirth').text('필수정보입니다.');
+			return;
+		}
+		if ( phone == ''){
+			$('input[name="phone"]').focus();
+			$('#sphone').text('필수정보입니다.');
+			return;
+		}
+
+		$('#join_form').attr({
+			'action':'jq',
+			'method':'post'
+		});
+		$('#join_form').submit();
+	});
+	
+});
+
+</script>
+
+<div class="container col-sm-6" id = "join_maindiv">
+	<h1 id="jq04_header">jQ04-JOIN PAGE</h1>
+	<form id="join_form">
+		<div class="form-group">
+			<label for = "id">ID</label>
+			<input type="text" id="id" name="id" class="form-control">
+			<span id ="sid" class="join_span"></span>
+		</div>
+		<div class="form-group">
+			<label for = "pwd">password</label>
+			<input type="password" id="pwd" name="pwd" class="form-control">
+			<span id ="spwd" class="join_span"></span>
+		</div>
+		<div class="form-group">
+			<label for = "vpwd">verified-password</label>
+			<input type="password" id="vpwd" name="vpwd" class="form-control">
+			<span id ="svpwd" class="join_span"></span>
+		</div>
+		<div class="form-group">
+			<label for = "name">name</label>
+			<input type="text" id="name" name="name" class="form-control">
+			<span id ="sname" class="join_span"></span>
+		</div>
+		<div class="form-group">
+			<label for = "birth">birth</label>
+			<input type="date" id="birth" name="birth" class="form-control">
+			<span id ="sbirth" class="join_span"></span>
+		</div>
+		<div class="form-group">
+			<label for = "sex">sex</label>
+			<select name ="sex" class="form-control" required>
+				<option value="male">male</option>
+				<option value="male">female</option>
+			</select>
+			<span id ="sbirth" class="join_span"></span>
+		</div>
+		<div class="form-group">
+			<label for = "phone">phone: 010-1234-1234</label>
+			<input type="tel" id="phone" name="phone" class="form-control" 
+			pattern = "[0-1]{3}-[0-9]{4}-[0-9]{4}" >
+			<span id ="sphone" class="join_span"></span>
+		</div>
+	</form>
+	<button>JOIN</button>
+</div>
