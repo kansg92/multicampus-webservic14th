@@ -26,5 +26,6 @@
 - [thymleaf 활용하여 페이지 만들기.](web/day045/)
 - [boosttrap 활용해서 웹페이지 만들기](web/day047/)
 - [JavaScript 연습, 계산기 만들기.](web/day05/)
+- [jQuery 연습, login,join page 만들기 (jq03,04)](web/day05/)
 
 ## Project
