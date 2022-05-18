@@ -1,0 +1,15 @@
+<meta charset="UTF-8">
+<script>
+$(document).ready(function(){
+	$('#n1').keyup(function(){
+		if($(this).val().length > 6){
+			$('#n2').focus();
+		}
+		
+	});
+});
+</script>
+
+
+<h1>jQ11 Main</h1>
+<input type="number" id ="n1" max="9999999">-<input type="text" id ="n2">

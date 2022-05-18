@@ -1,0 +1,19 @@
+<meta charset="UTF-8">
+<style>
+#image{
+	width : 100%;
+}
+</style>
+<script>
+$(document).ready(function(){
+	var imgs = ['img/0.jpg','img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg','img/5.jpg'];	
+	var cnt = 0;
+	setInterval(function(){
+		$('#image').attr('src',imgs[cnt % imgs.length]);
+		cnt++;		
+	},1000)
+});
+</script>
+
+<h1>jQ12 Main</h1>
+<img id ="image">

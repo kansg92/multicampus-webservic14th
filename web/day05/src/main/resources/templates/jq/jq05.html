@@ -1,3 +1,83 @@
 <meta charset="UTF-8">
+<style>
+#result{
+	width:300px;
+	border:2px solid tomato;
+}
+</style>
+<script>
+function display(d){
+	var txt = '';
+	$(d).each(function(index,item){
 
-<h1>jQ01 Main</h1>
+		txt += `<h3>${item.id} ${item.name} ${item.age}</h3>`;
+		
+	});
+	
+	
+	/*
+	for (var i in d){
+		txt += '<h3>'
+		txt += `${d[i].id} ${d[i].name} ${d[i].age}`
+		txt += '</h3>'
+	};
+	*/
+	$('#result').html(txt);
+	
+}
+
+function getdata(){
+	var data = [
+		{id:'id01',name:'lee',age:10},
+		{id:'id02',name:'kim',age:12},
+		{id:'id03',name:'kan',age:19},
+		{id:'id04',name:'pakr',age:27},
+		{id:'id05',name:'yoon',age:6}
+	];
+	display(data);
+};
+
+$(document).ready(function(){
+	$('#getdata').click(function(){
+		getdata();
+	});
+	$('#show').click(function(){
+		$('#result').fadeIn();
+	});
+	$('#hide').click(function(){
+		$('#result').fadeOut();
+	});
+	
+});
+
+</script>
+<h1>jQ05 Main</h1>
+
+<button id ="getdata">GET DATA</button>
+<button id ="show">Show</button>
+<button id ="hide">Hide</button>
+<div id="result"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,55 @@
+<meta charset="UTF-8">
+<style>
+	table{
+		width:500px;
+		border: 2px solid tomato;
+	}
+</style>
+
+
+<script>
+function getdata(){
+	var data = [
+		{id:'id01',name:'lee',age:10},
+		{id:'id02',name:'kim',age:12},
+		{id:'id03',name:'kan',age:19},
+		{id:'id04',name:'park',age:27},
+		{id:'id05',name:'yoon',age:6}
+	];
+	
+	var txt = '';
+	$(data).each(function(index,item){
+		txt += '<tr>';
+		txt += `<td>${item.id}</td><td>${item.name}</td><td>${item.age}</td>`;
+		txt += '<tr>';
+		
+	});
+	$('table > tbody').append(txt);
+	
+};
+
+$(document).ready(function(){
+	getdata();
+	$(window).scroll(function(){	
+
+		var doch = $(document).height();
+		var winh = $(window).scrollTop()+$(window).height();
+		if( doch <= winh +50 ){
+			getdata();
+			
+		}
+	});
+});
+</script>
+
+<h1>jQ14 Main</h1>
+<table>
+	<thead>
+		<tr>
+			<th>ID</th><th>NAME</th><th>AGE</th>
+		</tr>		
+	</thead>
+	<tbody>
+	
+	</tbody>
+</table>

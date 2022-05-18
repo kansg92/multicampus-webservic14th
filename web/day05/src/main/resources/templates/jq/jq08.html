@@ -1,3 +1,102 @@
 <meta charset="UTF-8">
+<script>
+function getdata(){
+	$('#name').val('lee');
+	$('#name').attr('disabled','disabled');
+	$('#pwd').val('1111');
+	$('input[name="ch"]:checkbox[value="op2"]').attr('checked',true);
+	$('input[name="optradio"]:radio[value="op3"]').attr('checked',true);
+	$('#sel ').val('2').attr('selected','selected');
+};
 
-<h1>jQ01 Main</h1>
+$(document).ready(function(){
+	
+	getdata();
+	
+	$('#name_help').hide();
+	$('#pwd_help').hide();
+
+	
+	$('#name').keyup(function(){
+		$('#name_help').hide();
+	});
+	
+	$('#pwd').blur(function(){	
+		var pwd = $('#pwd').val();
+		if (pwd !== ''){
+			$('#pwd_help').hide();
+			return;
+		}
+	});
+	
+	$('#register_bt').click(function(){
+		var name = $('#name').val();
+		var pwd = $('#pwd').val();
+		
+		if (name == ''){
+			$('#name_help').show();
+			$('#name').focus();
+			return;
+		}
+		if (pwd == ''){
+			$('#pwd_help').show();
+			$('#pwd').focus();
+			return;
+		}
+		
+		$('#register_form').attr({
+			'action':'registerimpl',
+			'method':'get'
+		});
+		$('#register_form').submit();
+	});
+	
+});
+</script>
+
+<h1>jQ08 Main</h1>
+
+<div class ="container col-sm-6">
+ 
+	<h1>Register</h1>
+	<form id ="register_form">
+		<div class="form-group">
+			<label for="name">Name:</label>
+			<input type="text" class="form-control" id="name" placeholder="Input Name" name="name" >
+			<span id="name_help" class="help-block">This is Mandatory Field...</span>
+		</div>
+		<div class="form-group">
+		  <label for="pwd">Password:</label>
+		  <input type="password" class="form-control" id="pwd" placeholder="Input Password" name="pwd">
+		  <span id="pwd_help" class="help-block">This is Mandatory Field...</span>
+		</div>
+		<div class="form-group">
+			<label class="checkbox-inline"><input type="checkbox" name ="ch" value="op1">Option 1</label>
+			<label class="checkbox-inline"><input type="checkbox" name ="ch" value="op2">Option 2</label>
+			<label class="checkbox-inline"><input type="checkbox" name ="ch" value="op3">Option 3</label>	
+		</div>
+		<div class="form-group">
+			<div class="radio">
+			  <label><input type="radio" name="optradio" value="op1">Option 1</label>
+			</div>
+			<div class="radio">
+			  <label><input type="radio" name="optradio" value="op2">Option 2</label>
+			</div>
+			<div class="radio disabled">
+			  <label><input type="radio" name="optradio" value="op3">Option 3</label>
+			</div>
+		</div>	
+		<div class="form-group">
+		  <label for="sel">Select list:</label>
+		  <select class="form-control" id="sel" name="sel">
+		    <option value="1">1</option>
+		    <option value="2">2</option>
+		    <option value="3">3</option>
+		    <option value="4">4</option>
+		  </select>
+		</div>
+		<button id = "register_bt" type="button" class="btn btn-success">REGISTER</button>
+	</form>
+
+
+</div>

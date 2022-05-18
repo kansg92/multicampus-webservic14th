@@ -1,0 +1,59 @@
+<meta charset="UTF-8">
+<style>
+	#image_div > img {
+		width:100%;
+		height:100%;
+	}
+	#jq_btn {
+		display : felx;
+		justify-content: center;
+	}
+</style>
+<script>
+
+$(document).ready(function(){
+	var imgs = ['img/0.jpg','img/1.jpg','img/2.jpg','img/3.jpg','img/4.jpg','img/5.jpg'];	
+	var cnt = 0;
+	let autoInterval = null; 
+
+	function getimg(){
+		$('#image').attr('src',imgs[Math.abs(cnt % imgs.length)])
+	}
+	
+	function back (){
+		cnt--;
+		$('#image').attr('src',imgs[Math.abs(cnt % imgs.length)])
+	}
+	function next (){
+		cnt++;
+		$('#image').attr('src',imgs[Math.abs(cnt % imgs.length)])
+	}
+	
+	function auto (){
+		autoInterval = setInterval(function(){
+			$('#image').attr('src',imgs[Math.abs(cnt % imgs.length)])
+			cnt++;		
+		},1000)
+	}
+	getimg();
+	$('#back').click(back);
+	$('#auto').click(auto);
+
+	$('#stop').click(function(){
+		clearInterval(autoInterval);
+	});
+	$('#next').click(next);
+});
+
+
+</script>
+
+
+<h1>jQ15 Main</h1>
+<div id ="jq_btn">
+	<button id ="back">back</button>
+	<button id ="auto">Auto</button>
+	<button id ="stop">Stop</button>
+	<button id ="next">next</button>
+</div>
+<div id ="image_div"><img id="image"></div>
