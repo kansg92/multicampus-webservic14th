@@ -1,0 +1,39 @@
+<meta charset="UTF-8">
+<style>
+	#result{
+		width:500px;
+		border:2px solid orange;
+	}
+</style>
+<script>
+function display(data){
+	var txt = `<h2>${data}</h2>`;
+	$('#result').html(txt);
+	
+};
+
+function getdata(txt){
+	$.ajax({
+		url:'search',
+		data:{'s':txt},
+		success:function(data){
+			display(data);
+		}
+	});
+};
+
+$(document).ready(function(){
+	$('button').click(function(){
+		var txt = $('#text').val();
+		getdata(txt);
+	});
+	
+});
+</script>
+
+
+
+<h1>AJAX02 Main</h1>
+<input type="text" id="text">
+<button>GETDATA</button>
+<div id="result"></div>

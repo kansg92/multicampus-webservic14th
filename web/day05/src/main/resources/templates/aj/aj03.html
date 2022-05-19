@@ -1,0 +1,98 @@
+<meta charset="UTF-8">
+<style>
+	#result{
+		width:500px;
+		border:2px solid orange;
+	}
+</style>
+<script>
+function checkid(id){
+	$.ajax({
+		url:'checkid',
+		data:{'id':id},
+		success:function(data){
+			if(data == '1'){
+				$('#sid').text('사용 가능 합니다.');
+			}else{
+				$('#sid').text('사용 불가능 합니다.');
+			}
+		}
+	})
+	
+};
+
+$(document).ready(function(){
+
+	$('button').click(function(){		
+		const pwd = $('input[name="pwd"]').val();
+		const pwd2 = $('input[name="pwd2"]').val();		
+		const id = $('input[name="id"]').val();
+		
+		if (id == ''){
+			$('#sid').text("필수입력사항입니다.");
+			$('input[name="id"]').focus();		
+			return;
+		}
+		
+		if (pwd == ''){
+			$('#spwd').text("필수입력사항입니다.");
+			$('input[name="pwd"]').focus();		
+			return;
+		}
+		
+		if (pwd2 == ''){
+			$('#spwd2').text("필수입력사항입니다.");
+			$('input[name="pwd2"]').focus();		
+			return;
+		}
+		/*
+		$('#register_form').attr({
+			'action':'regiesterok2',
+			'method':'post'
+		});
+		$('#register_form').submit();
+  		*/
+
+		
+	});
+
+	$('input[name="id"]').keyup(function(){
+		var id = $(this).val();
+		var sid = $('#sid');
+	
+		if(id.length < 3){
+			sid.text("3자리 이상이어야 합니다.");
+			$('button').attr('disabled','disabled')
+		}else {
+			checkid(id);
+			sid.text('');
+		}
+		
+		
+	});
+	$('input[name="pwd2"]').keyup(function(){
+		const pwd = $('input[name="pwd"]').val();
+		const pwd2 = $('input[name="pwd2"]').val();	
+		
+		if(pwd !== pwd2 ){
+			$('#spwd2').text("비밀번호가 다릅니다. 확인해주세요.");
+			$('button').attr('disabled','disabled')		
+		}else{
+			$('#spwd2').text("");		
+		}
+	});
+	
+	
+});
+</script>
+
+
+
+<h1>AJAX03 Register</h1>
+<form id="register_form">
+ID<input type="text" name="id"><span id="sid"></span><br>
+PWD1<input type="password" name="pwd"><span id="spwd"></span><br>
+PWD2<input type="password" name="pwd2"><span id="spwd2"></span><br>
+
+</form>
+<button>REGISTER</button>
