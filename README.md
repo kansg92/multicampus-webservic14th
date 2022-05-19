@@ -27,6 +27,7 @@
 - [boosttrap 활용해서 웹페이지 만들기](web/day047/)
 - [JavaScript 연습, 계산기 만들기.](web/day05/)
 - [jQuery 연습, login,join page 만들기 (jq03,04)](web/day05/)
-- [jQuery 연습, Event (jq03,04)](web/day05/)
+- [jQuery 연습, Event (jq5~15)](web/day05/)
+- [Ajax 연습, 비동기 화면 연습, 회원가입폼연습(aj04)](web/day05/)
 
 ## Project
