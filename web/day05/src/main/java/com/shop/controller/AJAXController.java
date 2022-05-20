@@ -1,8 +1,10 @@
 package com.shop.controller;
 
 import java.util.Date;
+import java.util.Random;
 
-import org.springframework.stereotype.Controller;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -52,5 +54,65 @@ public class AJAXController {
 		}
 		return data;
 	}
+
+	@RequestMapping("/getdata")	
+	public Object getdata() {
+		JSONArray ja = new JSONArray();
+		for(int i=0; i < 6; i++) {
+			JSONObject jo = new JSONObject();
+			jo.put("id", "id0"+i);
+			jo.put("name", "james"+i);
+			Random r = new Random();
+			int a = r.nextInt(50)+1;
+			jo.put("age", a);
+			ja.add(jo);
+		}
+		return ja;
+	}
+	
+	@RequestMapping("/getchart")	
+	public Object getchart() {
+		JSONArray ja = new JSONArray();
+		for(int i = 0; i < 15; i++) {
+			Random r = new Random();
+			int data = r.nextInt(50)+1;
+			ja.add(data);
+		}
+		return ja;
+	}
+	
 	
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
