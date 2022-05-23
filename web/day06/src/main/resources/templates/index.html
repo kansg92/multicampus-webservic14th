@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Insert title here</title>
+</head>
+<link rel="stylesheet" href="css/style.css" />
+<link rel="stylesheet" href="css/reset.css" />
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  </head>
+  <body class="main-screen">
+
+    <h2 id="clock">00:00:00</h2>
+    
+    <form id="login-form">
+    	<h1 >Hello, What's your name?</h1>
+		<div class="login-formbox" >
+	     	<input maxlength="15" type="text" name ="id" class="login-input" id="loginId"/>  
+	     	<input type="email" name="email" class="login-input hidden" id="loginEamil" > 
+  			<input type="password" name="pwd" class="login-input hidden" id="loginpwd" > 
+  			<input type="password" name="vpwd" class="login-input hidden" id="loginvpwd" > 					     	
+  		</div>
+  		<div id="textbox">
+  		<span id ="waringtext"></span>	 	
+  		</div>
+    </form>
+	<button id="loginBackBtn" class="hidden">back</button> 
+    <div class="id-input">
+      <h1 id="greeting" class="hidden"></h1>
+    </div>
+    <div id="quote" class="hidden">
+      <span></span><br><br>
+      <span></span>
+    </div>
+    <div id="weather">
+      <span></span><br />
+      <span></span>
+    </div>
+    <script src="js/greetings.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/quotes.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/weather.js"></script>
+  </body>
+</html>

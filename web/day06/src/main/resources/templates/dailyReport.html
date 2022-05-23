@@ -1,0 +1,97 @@
+<meta charset="UTF-8">
+<style>
+	input[name="todo"]{
+		width:100%;
+	}
+	select{
+		width:100%;
+	}
+	.dataTable-dropdown,.dataTable-search{
+		display:none;
+	}
+	.card-header{
+		margin-top:20px;
+	}
+	#datatablesSimple > thead > tr > th{
+		text-align: center
+	}
+	.dataTable-bottom{
+		display:flex;
+		justify-content: center;
+	}
+	#buttonBox{
+		display:flex;
+		justify-content: flex-end;
+	}
+	#addBtn,#daily-saveBtn{
+		margin-left:5px;
+	}
+
+	
+	#cautionText{
+		display:flex;
+		align-items: center;
+		color:red;
+		font-weight: bold;
+		font-size: 13px;
+	}
+</style>
+<script src="js/dailyReportable.js"></script>
+
+
+
+<div class="container-fluid">
+   <div class="card-header">
+       <i class="fas fa-table me-1"></i>
+       Daily Report
+   </div>
+   <form id = "daily-form">
+	
+		<table id="datatablesSimple">
+			<thead>
+				<tr>
+					<th width="250px" >시간</th><th width="150px">분류</th><th>한 일</th><th width="100px" >몰입도</th>
+				</tr>	
+			</thead>	
+			<tbody id="daily_tbody">
+				
+					<tr>
+					<td ><input type = "text" name = "startTime" id="startTime1" class="timepicker" value="00:00" disabled> ~
+					<input type = "text" name = "endTime" id="endTime1"   class="timepicker" value="00:00"></td>
+					<td>
+						<select name="select-cate" id="cate1">
+							<option value="">--choose</option>
+							<option value="sleep">Sleep</option>
+							<option value="work">work</option>
+							<option value="study">study</option>
+							<option value="workout">Workout</option>
+							<option value="rest">Rest</option>
+							<option value="slack">Slack Off</option>
+							<option value="others">Others</option>
+						</select>
+					</td>
+					<td><input type="text" name="todo"></td>
+					<td>
+						<select name="select-immersion" id="immersion1">
+						<option value="">--choose</option>
+						<option value="good">good</option>
+						<option value="notgood">not good</option>
+						<option value="bad">bad</option>
+						</select>
+					</td>
+					</tr>
+					
+
+					
+						
+			</tbody>		
+		</table>
+	</form>
+	<div id="buttonBox">
+	<span id="cautionText"></span>
+	<button id="addBtn" type="button" class="btn btn-danger" >ADD</button>
+	<button id="daily-saveBtn" class="btn btn-success" type="button" >SAVE</button>
+
+	
+	</div>
+</div>
