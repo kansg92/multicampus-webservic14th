@@ -6,35 +6,7 @@
 	select{
 		width:100%;
 	}
-	.dataTable-dropdown,.dataTable-search{
-		display:none;
-	}
-	.card-header{
-		margin-top:20px;
-	}
-	#datatablesSimple > thead > tr > th{
-		text-align: center
-	}
-	.dataTable-bottom{
-		display:flex;
-		justify-content: center;
-	}
-	#buttonBox{
-		display:flex;
-		justify-content: flex-end;
-	}
-	#addBtn,#daily-saveBtn{
-		margin-left:5px;
-	}
 
-	
-	#cautionText{
-		display:flex;
-		align-items: center;
-		color:red;
-		font-weight: bold;
-		font-size: 13px;
-	}
 </style>
 <script src="js/dailyReportable.js"></script>
 
@@ -48,7 +20,7 @@
    <form id = "daily-form">
 	
 		<table id="datatablesSimple">
-			<thead>
+			<thead id="daily-thead">
 				<tr>
 					<th width="250px" >시간</th><th width="150px">분류</th><th>한 일</th><th width="100px" >몰입도</th>
 				</tr>	

@@ -58,3 +58,31 @@ const todayQuote = quotes[Math.floor(Math.random() * quotes.length)];
 
 quote.innerText = todayQuote.quote;
 author.innerText = "by " + todayQuote.author;
+
+
+function hellodAuthor(){
+	$('#quote ').mouseenter(function(){
+		$('#quote>span').eq(1).removeClass("hidden");
+	});
+	$('#quote ').mouseleave(function(){
+		$('#quote>span').eq(1).addClass("hidden");
+	});
+}
+
+$(document).ready(function(){
+	hellodAuthor();
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+

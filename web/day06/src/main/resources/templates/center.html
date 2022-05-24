@@ -1,18 +1,31 @@
 
 <meta charset="UTF-8">
+<style>
+#resetBtn{
+	float:right;
+}
+</style>
+<script>
+function getdate(){
+	const todoDate = document.querySelector("#todoDate");
+	const date = new Date();	
+	const month = date.getMonth()+1;
+	const days = date.getDate();
+	todoDate.innerText = `${month}월${days}일`;
+};
+$(document).ready(getdate);
+</script>
 <body>
 	<main>
 	  <div class="container-fluid px-4">
-	             <h1 class="mt-4">Todo</h1>
+	             <h1 class="mt-4">Make Happy Day</h1>
 	             <ol class="breadcrumb mb-4">
-	                 <li class="breadcrumb-item active">매일 습관 만들기</li>
-
-                     
+	                 <li class="breadcrumb-item active">매일 습관 만들기</li>                  
 	             </ol>
-	             <div class="row">
+	             <div class="row">    
 	                 <div class="col-xl-3 col-md-6">
 	                     <div class="card bg-primary text-white mb-4">
-	                         <div class="card-body"><span>오늘 할 일</span></div>
+	                         <div class="card-body" id="habitCard1"><input type="text" name="habit1" id="habit1" class="habit1 hidden2"></div>
 	                         <div class="card-footer d-flex align-items-center justify-content-between">                                   
 	                             <span class="small text-white">완료</span>                               
 	                             <div class="small text-white"><input type="checkbox"></div>
@@ -21,7 +34,7 @@
 	                 </div>
 	                 <div class="col-xl-3 col-md-6">
 	                     <div class="card bg-warning text-white mb-4">
-	                         <div class="card-body">Warning Card</div>
+	                         <div class="card-body" id="habitCard2"><input type="text" name="habit2" id="habit2" class="habit2 hidden2"></div>
 	                         <div class="card-footer d-flex align-items-center justify-content-between">
 	                             <span class="small text-white">완료</span>                               
 	                             <div class="small text-white"><input type="checkbox"></div>
@@ -30,7 +43,7 @@
 	                 </div>
 	                 <div class="col-xl-3 col-md-6">
 	                     <div class="card bg-success text-white mb-4">
-	                         <div class="card-body">Success Card</div>
+	                         <div class="card-body" id="habitCard3"><input type="text" name="habit3" id="habit3" class="habit3 hidden2"></div>
 	                         <div class="card-footer d-flex align-items-center justify-content-between">
 	                 			<span class="small text-white">완료</span>                               
 	                             <div class="small text-white"><input type="checkbox"></div>
@@ -39,59 +52,62 @@
 	                 </div>
 	                 <div class="col-xl-3 col-md-6">
 	                     <div class="card bg-danger text-white mb-4">
-	                         <div class="card-body">Danger Card</div>
+	                         <div class="card-body" id="habitCard4"><input type="text" name="habit4" id="habit4" class="habit4 hidden2"></div>
 	                         <div class="card-footer d-flex align-items-center justify-content-between">
 	                            <span class="small text-white">완료</span>                               
 	                            <div class="small text-white"><input type="checkbox"></div>
 	                         </div>
 	                     </div>
 	                 </div>
-	             </div>
+	             </div>    
 	             <div class="row">
-	                 <div class="col-xl-6">
+	             	 <h2 class="mt-4">Todo List</h2>
+	                 <div class="col-xl-12">
+	          
 	                     <div class="card mb-4">
-	                         <div class="card-header">
-	                             <i class="fas fa-chart-area me-1"></i>
-	                             Area Chart Example
+	                      
+	                         <div class="card-header">                    
+                                 <form id="todo-form">
+                           	         <i class="fas fa-chart-area me-1"></i>
+								     <input
+	        							id="form-input"
+	       								type="text"
+	   									placeholder="Write a To Do and Prees Enter"
+								        required
+								      />					
+								      <button id="resetBtn" type="button" class="btn btn-outline-danger">All Reset</button>
+								      	  	 
+								  </form>
+									
 	                         </div>
-	                         <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
+	                         <span id="todoDate">date</span>
+	                         <ul id="todo-list"></ul>
+	                         <div class="card-body">
+	                         </div>
 	                     </div>
 	                 </div>
-	                 <div class="col-xl-6">
-	                     <div class="card mb-4">
-	                         <div class="card-header">
-	                             <i class="fas fa-chart-bar me-1"></i>
-	                             Bar Chart Example
-	                         </div>
-	                         <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
-	                     </div>
-	                 </div>
+
 	             </div>
+	             <h2 class="mt-4">Daily Report Summary</h2>
 	             <div class="card mb-4">
 	                 <div class="card-header">
 	                     <i class="fas fa-table me-1"></i>
-	                     DataTable Example
+	                    	Daily Report
 	                 </div>
 	                 <div class="card-body">
 	                     <table id="datatablesSimple">
 	                         <thead>
 	                             <tr>
+	                                 <th>Date</th>
 	                                 <th>Name</th>
-	                                 <th>Position</th>
-	                                 <th>Office</th>
-	                                 <th>Age</th>
-	                                 <th>Start date</th>
-	                                 <th>Salary</th>
+	                                 <th>Score</th>
 	                             </tr>
 	                         </thead>
 	                         <tfoot>
 	                             <tr>
+	                                 <th>Date</th>
 	                                 <th>Name</th>
-	                                 <th>Position</th>
-	                                 <th>Office</th>
-	                                 <th>Age</th>
-	                                 <th>Start date</th>
-	                                 <th>Salary</th>
+	                                 <th>Score</th>
 	                             </tr>
 	                         </tfoot>
 	                         <tbody>
@@ -99,14 +115,14 @@
 	                                 <td>Tiger Nixon</td>
 	                                 <td>System Architect</td>
 	                                 <td>Edinburgh</td>
-	                                 <td>61</td>
-	                                 <td>2011/04/25</td>
-	                                 <td>$320,800</td>
 	                             </tr>           
 	                         </tbody>
 	                     </table>
+	                 
 	                 </div>
+	                     <a href="dailyReport" id="gotoDR">Go to Daily Report Form</a>
 	             </div>
+	             
 	         </div>
 	</main>
 </body>

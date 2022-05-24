@@ -108,13 +108,16 @@
 .id-input2 > a {
 	color:white;
 	font-family: 'Open Sans', sans-serif;
-	font-size: 20px;
+	font-size: 25px;
+	border : 1px solid white;
+	border-radius: 10px; 
+	padding : 12px;
 }
 
 .id-input2 > a:hover{
 	font-size : 1.5em;
 	font-weight: bold;
-	
+	border : 3px solid white;
 }
 
 #greeting {
@@ -137,9 +140,10 @@
 
 #quote span{
   color : white;
-  background-color: rgba(0,0,0,0.5);
+
   width: 0;
   font-family: 'Open Sans', sans-serif;
+  cursor: default;
 }
 
 
@@ -160,5 +164,97 @@
   top : 25px;
   color : white;
 }
+
+.dataTable-dropdown,.dataTable-search{
+	display:none;
+}
+.card-header{
+	margin-top:20px;
+}
+#datatablesSimple > thead > tr > th{
+	text-align: center
+}
+.dataTable-bottom{
+	display:flex;
+	justify-content: center;
+}
+#buttonBox{
+	display:flex;
+	justify-content: flex-end;
+}
+#addBtn,#daily-saveBtn{
+	margin-left:5px;
+}
+
+
+#cautionText{
+	display:flex;
+	align-items: center;
+	color:red;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+#daily-thead > th:first-child {
+	width: 250px;
+}
+
+#daily-thead > th:nth-child(1) {
+	width : 150px;
+}
+
+#daily-thead > th:last-child {
+	 width: 100px;
+}
+
+
+.habit1,.habit2,.habit3,.habit4{
+	background-color: transparent;
+	color: white;
+}
+
+
+.todoButton{
+	color: red;
+	background-color: transparent;
+	border-color: transparent;
+	
+}
+
+.todoButton:hover{
+	font-size: 1.5em;
+}
+
+#form-input{
+	width: 300px;
+	
+}
+
+#gotoDR{
+	text-decoration: none;
+	color:black;
+	float:right;
+	outline: none;
+}
+
+#gotoDR:hover{
+	font-weight: bold;
+	color:green;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

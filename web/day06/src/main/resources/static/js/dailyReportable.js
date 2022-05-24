@@ -1,7 +1,6 @@
 
 let cnt = 1;
 function changToDo(event){
-	
 	const inputValue = event.target.innerText;
 	const td = event.target;
 	const input = event.target.querySelector('input');
@@ -11,6 +10,7 @@ function changToDo(event){
 	input.focus();
 	}
 }
+
 
 addEventListener("dblclick", changToDo);
 
