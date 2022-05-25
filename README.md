@@ -30,5 +30,8 @@
 - [jQuery 연습, Event (jq5~15)](web/day05/)
 - [Ajax 연습, 비동기 화면 연습, 회원가입폼연습(aj04)](web/day05/)
 - [개인 프로젝트 웹구성해보기 -Daily Report](web/day06/)
+- [카카오MAP API활용](web/day05/)
 
 ## Project
+
+- [Daily Report](web/day06/)
