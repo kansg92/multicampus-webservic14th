@@ -70,6 +70,73 @@ public class AJAXController {
 		return ja;
 	}
 	
+	@RequestMapping("/getmarkers")
+	public Object getmarkers(String loc) {
+		JSONArray ja = new JSONArray();
+		if(loc.equals("s")) {
+			JSONObject jo1 = new JSONObject();
+			jo1.put("contetnt", "<div>카카오1</div>");
+			jo1.put("lat", 37.55041692365908);
+			jo1.put("lng", 126.92037178013711);
+			jo1.put("target", "js01");		
+			ja.add(jo1);
+			JSONObject jo2 = new JSONObject();
+			jo2.put("contetnt", "<div>카카오2</div>");
+			jo2.put("lat", 37.56041692365908);
+			jo2.put("lng", 126.93037178013711);
+			jo2.put("target", "js02");		
+			ja.add(jo2);
+			JSONObject jo3 = new JSONObject();
+			jo3.put("contetnt", "<div>카카오3</div>");
+			jo3.put("lat", 37.57041692365908);
+			jo3.put("lng", 126.94037178013711);
+			jo3.put("target", "js03");		
+			ja.add(jo3);
+		}else if(loc.equals("b")) {
+			JSONObject jo1 = new JSONObject();
+			jo1.put("contetnt", "<div>카카오1</div>");
+			jo1.put("lat", 35.17642453774257);
+			jo1.put("lng", 129.16669784099807);
+			jo1.put("target", "js04");		
+			ja.add(jo1);
+			JSONObject jo2 = new JSONObject();
+			jo2.put("contetnt", "<div>카카오2</div>");
+			jo2.put("lat", 35.18642453774257);
+			jo2.put("lng", 129.17669784099807);
+			jo2.put("target", "js05");		
+			ja.add(jo2);
+			JSONObject jo3 = new JSONObject();
+			jo3.put("contetnt", "<div>카카오3</div>");
+			jo3.put("lat", 35.19642453774257);
+			jo3.put("lng", 129.18669784099807);
+			jo3.put("target", "js06");		
+			ja.add(jo3);
+			
+		}else if(loc.equals("g")) {
+			JSONObject jo1 = new JSONObject();
+			jo1.put("contetnt", "<div>카카오1</div>");
+			jo1.put("lat", 35.16173425533525);
+			jo1.put("lng", 126.88758871719189);
+			jo1.put("target", "js04");		
+			ja.add(jo1);
+			JSONObject jo2 = new JSONObject();
+			jo2.put("contetnt", "<div>카카오2</div>");
+			jo2.put("lat", 35.17173425533525);
+			jo2.put("lng", 126.87758871719189);
+			jo2.put("target", "js05");		
+			ja.add(jo2);
+			JSONObject jo3 = new JSONObject();
+			jo3.put("contetnt", "<div>카카오3</div>");
+			jo3.put("lat", 35.18173425533525);
+			jo3.put("lng", 126.86758871719189);
+			jo3.put("target", "js06");		
+			ja.add(jo3);
+		}
+		
+		
+		return ja;
+	}
+	
 	@RequestMapping("/getchart")	
 	public Object getchart() {
 		JSONArray ja = new JSONArray();

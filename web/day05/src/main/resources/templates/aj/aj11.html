@@ -39,37 +39,16 @@ function displayMarker(pos){
 };
 
 function getmarkers(loc){
-	var pos = null;
-	pos = [
-	    {
-	        content: '<div>카카오1</div>', 
-	        lat : 37.55041692365908,
-	        lng : 126.92037178013711,
-	        target: 'js01'
-	        
-	        
-	    },
-	    {
-	        content: '<div>카카오2</div>', 
-	        lat : 37.56041692365908,
-	        lng : 126.93037178013711,
-	        target: 'js02'
-	    },
-	    {
-	        content: '<div>카카오3</div>', 
-	        lat : 37.57041692365908,
-	        lng : 126.94037178013711,
-	        target: 'js03'
-	    },
-	    {
-	        content: '<div>카카오4</div>', 
-	        lat : 37.58041692365908,
-	        lng : 126.95037178013711,
-	        target: 'js04'
-	    }
-	];
+	$.ajax({
+		url:'getmarkers',
+		data:{loc:loc},
+		success:function(data){
+			console.log(data);
+			displayMarker(data);
+		}
 	
-	displayMarker(pos);
+	});
+
 };
 
 function gomap(loc){
@@ -125,7 +104,7 @@ $(document).ready(function(){
 
 </script>
 
-<h1>AJAX10 Main</h1>
+<h1>AJAX11 Main</h1>
 <button id="s">Seoul</button>
 
 <button id="b">Busan</button>
