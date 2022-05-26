@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+ 	
+ 	<!--DI (Dependency Injection) 의존성 주입 -->
+ 	<bean id="userService" class="com.multi.user.UserService">
+ 		<property name="dao" ref="uDao" />
+ 	
+ 	</bean>
+	<bean id="uDao" class="com.multi.user.UserDao"/>
+ 	<bean id="uoDao" class="com.multi.user.UserOracleDao"/>
+    
+</beans>
