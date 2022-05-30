@@ -47,6 +47,13 @@
   - [Spring 라이브러리를 직졉 가져와 스프링환경셋팅](spring/day011/)
   - [Spring 라이브러리를 직졉 가져와 스프링 환경 기초 연습](spring/day012/)
   - [Spring Maven서버를 이용해 가져와서 스프링 환경 기초 연습(DAO,Controller,Service,VO)](spring/day013/)
+- day02 스프링 AOP,DI 특성에따른 활용법 셋팅 및 SQL 연동 공부.
+  - [DI XML을 활용하여 적용하기](spring/day02/)
+  - [DI anotation 을 활용하여 적용하기](spring/day021/)
+  - [AOP XML을 활용하여 적용하기](spring/day022/)
+  - [AOP annotation 을 활용하여 적용하기](spring/day023/)
+  - [Spring mybatis를 활용하여 SQL과 데이터베이스 연동하기.](spring/day024/)
+
 
 
 
