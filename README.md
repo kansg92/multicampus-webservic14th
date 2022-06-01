@@ -53,6 +53,11 @@
   - [AOP XML을 활용하여 적용하기](spring/day022/)
   - [AOP annotation 을 활용하여 적용하기](spring/day023/)
   - [Spring mybatis를 활용하여 SQL과 데이터베이스 연동하기.](spring/day024/)
+- day03 스프링 SQL연동 및 환경셋팅 이해 및 연습
+  - [spring mySQL 연동 셋팅 연습1](spring/day031/)
+  - [spring mySQL 연동 셋팅 연습2](spring/day032/)
+  - [spring mySQL 연동 워크샵](spring/day033/)
+
 
 
 
