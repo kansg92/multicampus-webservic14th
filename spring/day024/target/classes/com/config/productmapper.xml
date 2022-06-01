@@ -16,7 +16,7 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<update id="update" parameterType="product">
 		UPDATE PRODUCT SET NAME=#{name},PRICE=#{price},RATE=#{rate} WHERE ID=#{id}
 	</update>
-	<delete id="delete" parameterType="Integer">
+	<delete id="delete" parameterType="int">
 		DELETE FROM PRODUCT WHERE ID=#{obj}
 	</delete>
 	
