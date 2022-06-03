@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>Insert title here</title>
+<script>
+
+</script>
+</head>
+<body>
+	<h1>Cust Update Page</h1>
+	
+	<form action="custupdateimpl" method="post">
+		ID:<span th:text="${ucust.id}"></span><br>
+		<input type="hidden" name="id" value="" th:value="${ucust.id}">
+		
+		PWD<input type="password" name="pwd" value="" th:value="${ucust.pwd}"><br>
+		NAME<input type="text" name="name" value="" th:value="${ucust.name}"><br>
+		<input type="submit" value="UPDATE">
+	</form>
+	
+</body>
+</html>

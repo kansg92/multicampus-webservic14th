@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>Insert title here</title>
+<script>
+
+</script>
+</head>
+<body>
+	<h1>Product Detail Page</h1>
+	<h3 th:text="${dprod.id}"></h3>
+	<h3 th:text="${dprod.name}"></h3>
+	<h3 th:text="${dprod.price}"></h3>
+	<h3 th:text="${dprod.regdate}"></h3>
+	<h3 th:text="${dprod.rate}"></h3>
+	<a href ="" th:href="@{/productdelete(id=${dprod.id})}">DELETE</a>
+	<a href =""th:href="@{/productupdate(id=${dprod.id})}">UPDATE</a><br>
+	<a href="/">Go HOME</a>
+	
+</body>
+</html>

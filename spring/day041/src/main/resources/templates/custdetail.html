@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>Insert title here</title>
+<script>
+
+</script>
+</head>
+<body>
+	<h1>Cust Detail Page</h1>
+	<h3 th:text="${dcust.id}"></h3>
+	<h3 th:text="${dcust.pwd}"></h3>
+	<h3 th:text="${dcust.name}"></h3>
+	<a href ="" th:href="@{/custdelete(id=${dcust.id})}">DELETE</a>
+	<a href =""th:href="@{/custupdate(id=${dcust.id})}">UPDATE</a>
+	
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>Insert title here</title>
+<script>
+
+</script>
+</head>
+<body>
+	<h1>Product Update Page</h1>
+	
+	<form action="productupdateimpl" method="post">
+		ID:<span th:text="${uprod.id}"></span><br>
+		<input type="hidden" name="id" value="" th:value="${uprod.id}">
+		
+		Name<input type="text" name="name" value="" th:value="${uprod.name}"><br>
+		Price<input type="text" name="price" value="" th:value="${uprod.price}"><br>
+		REGDATE:<span th:text="${uprod.regdate}"></span><br>
+		RATE<input type="text" name="rate" value="" th:value="${uprod.rate}"><br>
+		
+		<input type="submit" value="UPDATE">
+	</form>
+	<a href="/">Go HOME</a>
+	
+</body>
+</html>
