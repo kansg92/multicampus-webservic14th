@@ -1,9 +1,7 @@
 package com.mapper;
 
-import java.util.Date;
 import java.util.List;
-
-import org.apache.ibatis.annotations.Param;
+import java.util.Map;
 
 import com.vo.ItemVO;
 
@@ -14,6 +12,7 @@ public interface ItemMapper {
 	public ItemVO select(int obj) throws Exception;
 	public List<ItemVO> selectAll() throws Exception;
 	public List<ItemVO> searchName(String name) throws Exception;
-	public List<ItemVO> searchPrice(@Param("price1")int price1, @Param("price2")int price2) throws Exception;
-	public List<ItemVO> searchDate(Date date);
+//	public List<ItemVO> searchPrice(@Param("price1")int price1, @Param("price2")int price2) throws Exception;
+	public List<ItemVO> searchPrice(Map<String,Integer> map) throws Exception;
+	public List<ItemVO> searchDate(String date);
 }

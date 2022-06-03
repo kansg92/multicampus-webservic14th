@@ -15,6 +15,11 @@ public class CustVO {
 		this.addr = addr;
 		this.regdate = regdate;
 	}
+	
+	public CustVO(String id, String name) {
+		this.id = id;
+		this.name = name;
+	}
 	public CustVO(String id, String name, String addr) {
 		this.id = id;
 		this.name = name;

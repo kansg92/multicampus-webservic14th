@@ -1,34 +1,30 @@
 package com.test;
 
-
-import java.util.Date;
-import java.util.List;
-
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.service.ItemService;
-import com.vo.ItemVO;
+import com.frame.Service;
+import com.vo.CustVO;
 
-public class ItemSearchDateTest {
+
+public class CustInsertTest {
 
 	public static void main(String[] args) {
 		ApplicationContext factory =
 		new ClassPathXmlApplicationContext("spring.xml");
 		
-		ItemService service = 
-				(ItemService) factory.getBean("itemService");
+		Service<Integer, CustVO> service = 
+				(Service<Integer, CustVO>) factory.getBean("custservice");
 		
-		List<ItemVO> list = null;
+		CustVO product = new CustVO("id06", "park");
+		
 		try {
-			String date = "2022-05-31";
-			list = service.searchDate(date);
+			service.register(product);
+			System.out.println(product);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		for (ItemVO itemVO : list) {
-			System.out.println(itemVO);
+			System.out.println("입력오류");
 		}
 		
 

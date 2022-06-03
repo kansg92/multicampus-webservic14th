@@ -17,7 +17,7 @@ public class CustService implements Service<String, CustVO> {
 	@Override
 	public void register(CustVO v) throws Exception {
 		// TODO Auto-generated method stub
-		dao.Insert(v);
+		dao.insert(v);
 	}
 
 	@Override

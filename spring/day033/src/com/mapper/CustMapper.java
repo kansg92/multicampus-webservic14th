@@ -6,7 +6,7 @@ import com.vo.CustVO;
 
 public interface CustMapper {
 	
-	public void Insert(CustVO p) throws Exception;
+	public void insert(CustVO p) throws Exception;
 	public void delete(String id) throws Exception;
 	public void update(CustVO p) throws Exception;
 	

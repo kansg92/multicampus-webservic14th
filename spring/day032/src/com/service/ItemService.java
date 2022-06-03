@@ -1,7 +1,7 @@
 package com.service;
 
-import java.util.Date;
 import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -51,11 +51,11 @@ public class ItemService implements Service<Integer, ItemVO> {
 		return dao.searchName(name);
 	}
 	
-	public List<ItemVO> searchPrice(int price1, int price2) throws Exception{
-		return dao.searchPrice(price1, price2);
+	public List<ItemVO> searchPrice(Map<String,Integer> map) throws Exception{
+		return dao.searchPrice(map);
 	}
 	
-	public List<ItemVO> searchDate(Date date) throws Exception{
+	public List<ItemVO> searchDate(String date) throws Exception{
 		return dao.searchDate(date);
 	}
 
