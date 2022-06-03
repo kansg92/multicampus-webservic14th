@@ -21,6 +21,11 @@ public class MainController {
 		return "main";
 	}
 	
+	@RequestMapping("/chart")
+	public String chart() {
+		return "chart";
+	}
+	
 	@RequestMapping("/custadd")
 	public String custadd() {
 		return "custadd";

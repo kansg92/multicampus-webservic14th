@@ -15,7 +15,7 @@
 				<td><a href ="productdetail" th:href="@{/productdetail(id=${p.id})}" th:text ="${p.id}"></a></td>
 				<td th:text ="${p.name}"></td>
 				<td th:text ="${p.price}"></td>
-				<td th:text ="${p.regdate}"></td>
+				<td th:text ="${#dates.format(p.regdate,'yyyy-MM-dd')}"></td>
 				<td th:text ="${p.rate}"></td>
 			</tr>
 		</tbody>

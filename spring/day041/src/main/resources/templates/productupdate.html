@@ -17,7 +17,7 @@
 		
 		Name<input type="text" name="name" value="" th:value="${uprod.name}"><br>
 		Price<input type="text" name="price" value="" th:value="${uprod.price}"><br>
-		REGDATE:<span th:text="${uprod.regdate}"></span><br>
+		REGDATE:<span th:text="${#dates.format(uprod.regdate,'yyyy-MM-dd')}"></span><br>
 		RATE<input type="text" name="rate" value="" th:value="${uprod.rate}"><br>
 		
 		<input type="submit" value="UPDATE">
