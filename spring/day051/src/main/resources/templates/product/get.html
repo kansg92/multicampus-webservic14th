@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+
+
+<h1>PRODUCT SELECT PAGE</h1>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>PRICE</th>
+        <th>REGDATE</th>
+        <th>RATE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each = "c:${allprod}">
+ 		<td><a href ="detail" th:href="@{/product/detail(id=${c.id})}" th:text ="${c.id}"></a></td>
+		<td><a href ="detail" th:href="@{/product/detail(id=${c.id})}" th:text ="${c.name}"></a></td>
+		<td><a href ="detail" th:href="@{/product/detail(id=${c.id})}" th:text ="${c.price}"></a></td>
+		<td><a href ="detail" th:href="@{/product/detail(id=${c.id})}" th:text ="${#dates.format(c.regdate,'yyyy-MM-dd')}"></a></td>
+		<td><a href ="detail" th:href="@{/product/detail(id=${c.id})}" th:text ="${c.rate}"></a></td>
+      </tr>
+      <tr>
+      
+      </tr>
+      
+    </tbody>
+  </table>

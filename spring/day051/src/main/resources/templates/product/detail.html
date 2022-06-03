@@ -1,0 +1,29 @@
+<meta charset="UTF-8">
+
+
+<h1>CUST Detail PAGE</h1>
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>NAME</th>
+        <th>PRICE</th>
+        <th>REGDATE</th>
+        <th>RATE</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td th:text="${dprod.id}">John</td>
+        <td th:text="${dprod.name}">Doe</td>
+        <td th:text="${dprod.price}">john@example.com</td>
+        <td th:text="${#dates.format(dprod.regdate,'yyyy-MM-dd')}">john@example.com</td>
+        <td th:text="${dprod.rate}">john@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  	<a href ="" th:href="@{/product/delete(id=${dprod.id})}">DELETE</a>
+	<a href ="update" th:href="@{/product/update(id=${dprod.id})}">UPDATE</a>
+  

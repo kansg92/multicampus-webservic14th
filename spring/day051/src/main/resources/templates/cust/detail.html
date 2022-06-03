@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+
+
+<h1>CUST Detail PAGE</h1>
+
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>PWD</th>
+        <th>NAME</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td th:text="${dcust.id}">John</td>
+        <td th:text="${dcust.pwd}">Doe</td>
+        <td th:text="${dcust.name}">john@example.com</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  	<a href ="" th:href="@{/cust/delete(id=${dcust.id})}">DELETE</a>
+	<a href ="update" th:href="@{/cust/update(id=${dcust.id})}">UPDATE</a>
+  

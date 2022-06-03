@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+
+
+<h1>CUST SELECT PAGE</h1>
+
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>NAME</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr th:each = "c:${allcust}">
+ 		<td><a href ="detail" th:href="@{/cust/detail(id=${c.id})}" th:text ="${c.id}"></a></td>
+		<td><a href ="detail" th:href="@{/cust/detail(id=${c.id})}" th:text ="${c.name}"></a></td>
+      </tr>
+      <tr>
+      
+      </tr>
+      
+    </tbody>
+  </table>
+	

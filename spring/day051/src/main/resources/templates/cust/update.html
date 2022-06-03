@@ -1,0 +1,21 @@
+<meta charset="UTF-8">
+
+
+<h1>CUST UPDATE PAGE</h1>
+
+
+<form action="updateimpl" method="post">
+  <div class="form-group">
+    <label for="id">ID:</label>
+    <input type="text" class="form-control" id="id" name="id" th:value="${ucust.id}" readonly="readonly">
+  </div>
+   <div class="form-group">
+    <label for="name">NAME:</label>
+    <input type="text" class="form-control" id="name" name="name" th:value="${ucust.name}">
+  </div>
+  <div class="form-group">
+    <label for="pwd">Password:</label>
+    <input type="text" class="form-control" id="pwd" name="pwd" th:value="${ucust.pwd}">
+  </div>
+  <button type="submit" class="btn btn-default">UPDATE</button>
+</form>
