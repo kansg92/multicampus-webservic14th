@@ -57,7 +57,8 @@
   - [spring mySQL 연동 셋팅 연습1](spring/day031/)
   - [spring mySQL 연동 셋팅 연습2](spring/day032/)
   - [spring mySQL 연동 워크샵](spring/day033/)
-
+- day04 자바스프링 Springboot를 이용한 WEB, SQL연동
+  - 
 
 
 
