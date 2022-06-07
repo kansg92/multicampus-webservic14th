@@ -1,6 +1,6 @@
 <meta charset="UTF-8">
 
-<p><a href="register">Cust Register</a></p>
+<p th:if="${session.logincust} != null"><a href="register">Cust Register</a></p>
 <p><a href="get">Cust Select</a></p>
 
 

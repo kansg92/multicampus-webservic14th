@@ -8,6 +8,9 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<select id="select" parameterType="int" resultType="ProductVO">
 		SELECT id,name,price,date_format(regdate,'%Y-%m-%d') AS regdate,rate FROM product WHERE ID=#{id}
 	</select>
+	<select id="selectcnt" resultType= "int">
+		SELECT LAST_INSERT_id() AS cnt
+	</select>
 	<select id="selectAll" resultType="ProductVO">
 		SELECT id,name,price,date_format(regdate,'%Y-%m-%d') AS regdate,rate FROM product
 	</select>

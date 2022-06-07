@@ -67,9 +67,18 @@
 	        <li><a href="/cust/">Customer</a></li>
 	        <li><a href="/product/">Product</a></li>
 	      </ul>
+	      
 	      <ul class="nav navbar-nav navbar-right">
-	        <li><a href="login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    		<li th:if="${session.logincust} == null"><a href="/login"><span class="glyphicon glyphicon-log-in">
+	      		</span> Login</a></li>
+	      	<li th:unless="${session.logincust} == null"><a href="/logout">
+	      		<span  th:text="${session.logincust.name}"></span>
+			<span  class="glyphicon glyphicon-log-out"></span> Logout</a></li>
 	      </ul>
+	      
+
+	      
+	      
 	    </div>
 	  </div>
 	</nav>

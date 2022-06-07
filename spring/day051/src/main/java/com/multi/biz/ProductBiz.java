@@ -44,5 +44,9 @@ public class ProductBiz implements Biz<Integer, ProductVO> {
 		// TODO Auto-generated method stub
 		return dao.selectAll();
 	}
+	
+	public int getcnt() throws Exception{
+		return dao.selectcnt();
+	}
 
 }

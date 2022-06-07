@@ -39,6 +39,8 @@ public class ProductController {
 		mv.addObject("left","product/left");
 		try {
 			biz.register(obj);
+			int cnt = biz.getcnt();
+			mv.addObject("cnt",cnt);
 			mv.addObject("center","product/registerok");
 			mv.addObject("rprod", obj);
 		} catch (Exception e) {
