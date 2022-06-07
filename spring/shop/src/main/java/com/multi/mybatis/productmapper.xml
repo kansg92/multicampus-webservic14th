@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.multi.mapper.ProductMapper">
+
+	<select id="select" parameterType="int" resultType="ProductVO">
+		SELECT prod.id, prod.name, prod.price, prod.regdate,
+		prod.cid, prod.imgname, cate.name AS cateName
+		FROM product prod
+		INNER JOIN cate cate ON cate.id = prod.cid
+		WHERE prod.id=#{id}
+	</select>
+	<select id="selectcnt" resultType= "int">
+		SELECT LAST_INSERT_id() AS cnt
+	</select>
+	<select id="selectAll" resultType="ProductVO">
+		SELECT prod.id, prod.name, prod.price, prod.regdate,
+		prod.cid, prod.imgname, cate.name AS cateName
+		FROM product prod
+		INNER JOIN cate cate ON cate.id = prod.cid
+	</select>
+	<insert id="insert" parameterType="ProductVO">
+		INSERT INTO product VALUES (Null,#{name},#{price},SYSDATE(),#{cid},#{imgname})
+	</insert>
+	<update id="update" parameterType="ProductVO">
+		UPDATE product SET NAME=#{name},Price=#{price},cid=#{cid},IMGNAME=#{imgname} WHERE ID=#{id}
+	</update>
+	<delete id="delete" parameterType="int">
+		DELETE FROM product WHERE ID=#{id}
+	</delete>	
+
+</mapper>
