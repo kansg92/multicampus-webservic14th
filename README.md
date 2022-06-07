@@ -63,6 +63,11 @@
 
 - day05 자바스프링 Springboot를 이용한 WEB, SQL연동 bootstrap이용하여 web디자인까지.
   - [springboot web,data연동](spring/day051/)
+  - [컨트롤러 httpsession 활용, thymleaf if문 활용](spring/day051/)
+- day06 자바스프링 Springboot를 이용한 WEB, SQL연동 bootstrap이용하여 web디자인까지.
+
+  - [shoppingdb 환경셋팅부터 dao,service 구축](spring/shop/)
+
 
 ## Project
 
