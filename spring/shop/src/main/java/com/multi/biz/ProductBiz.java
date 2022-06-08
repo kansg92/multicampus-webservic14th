@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.multi.frame.Biz;
 import com.multi.mapper.ProductMapper;
+import com.multi.vo.ProductAVGVO;
 import com.multi.vo.ProductVO;
 
 @Service
@@ -47,8 +48,21 @@ public class ProductBiz implements Biz<Integer, ProductVO> {
 		
 	}
 	
+	public List<ProductVO> get2() throws Exception {
+		// TODO Auto-generated method stub
+		return dao.selectAll2();
+		
+	}
+	
+	public List<ProductAVGVO> getCateAvg() throws Exception {
+		// TODO Auto-generated method stub
+		return dao.cateavg();
+		
+	}
+	
 	public int selectcnt() throws Exception{
 		return dao.selectcnt();
 	}
+	
 
 }

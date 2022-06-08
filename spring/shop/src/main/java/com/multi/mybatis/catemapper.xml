@@ -8,6 +8,11 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<select id="select" parameterType="int" resultType="CateVO">
 		SELECT * FROM cate WHERE ID=#{id}
 	</select>
+	
+	<select id="selectmain" resultType="CateVO">
+		SELECT * FROM cate WHERE pid IS NULL
+	</select>
+	
 	<select id="selectAll" resultType="CateVO">
 		SELECT * FROM cate
 	</select>
@@ -20,5 +25,4 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<delete id="delete" parameterType="int">
 		DELETE FROM cate WHERE ID=#{id}
 	</delete>	
-
 </mapper>

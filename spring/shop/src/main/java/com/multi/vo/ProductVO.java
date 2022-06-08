@@ -21,4 +21,22 @@ public class ProductVO {
 	private int cid;
 	private String imgname;
 	private String catename;
+	private String maincatename;
+
+	public ProductVO(String name, int price, int cid, String imgname) {
+		this.name = name;
+		this.price = price;
+		this.cid = cid;
+		this.imgname = imgname;
+	}
+
+	public ProductVO(String name, int price, Date regdate, int cid, String imgname) {
+		this.name = name;
+		this.price = price;
+		this.regdate = regdate;
+		this.cid = cid;
+		this.imgname = imgname;
+	}
+	
+	
 }

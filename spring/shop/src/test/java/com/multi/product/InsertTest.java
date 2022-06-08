@@ -17,7 +17,7 @@ class InsertTest {
 	void contextLoads() {
 		
 		
-		ProductVO prod = new ProductVO(0, "Tommy-shirts", 189900, null, 110, "shirts1.jpeg",null);
+		ProductVO prod = new ProductVO(0, "Tommy-shirts", 189900, null, 110, "shirts1.jpeg",null,null);
 		
 		try {
 			biz.register(prod);

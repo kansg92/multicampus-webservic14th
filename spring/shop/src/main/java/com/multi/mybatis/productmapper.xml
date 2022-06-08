@@ -21,6 +21,18 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		FROM product prod
 		INNER JOIN cate cate ON cate.id = prod.cid
 	</select>
+	<select id="selectAll2" resultType="ProductVO">
+		SELECT prod.id, prod.name, prod.price, prod.regdate,
+		prod.cid, prod.imgname, cate.name AS cateName, c2.name maincatename
+		FROM product prod
+		INNER JOIN cate cate ON cate.id = prod.cid
+		INNER JOIN cate c2 ON cate.pid = c2.id
+	</select>
+	<select id="cateavg" resultType="productAVGVO">
+		SELECT c.name as catename,avg(p.price) as avgprice FROM product p
+		INNER JOIN cate c ON p.cid = c.id
+		GROUP BY c.name
+	</select>
 	<insert id="insert" parameterType="ProductVO">
 		INSERT INTO product VALUES (Null,#{name},#{price},SYSDATE(),#{cid},#{imgname})
 	</insert>

@@ -1,0 +1,39 @@
+<script>
+$(document).ready(function(){
+	$('#login_btn').click(function(){
+		$('#login_form').attr({
+			'method' : 'post',
+			'action' : '/loginimpl'
+		});
+		$('#login_form').submit();
+	});
+});
+
+</script>
+
+
+<div class="container">
+  <div class="col-sm-offset-2 col-sm-10">
+  	<h2>Horizontal form</h2>
+  </div>
+  <form class="form-horizontal" id="login_form" >
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="id">ID:</label>
+      <div class="col-sm-6">
+        <input type="text" class="form-control" id="id" placeholder="Write Your ID" name="id">
+      </div>
+    </div>
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Password:</label>
+      <div class="col-sm-6">          
+        <input type="password" class="form-control" id="pwd" placeholder="Write Your password" name="pwd">
+      </div>
+    </div>
+  	<div class="form-group">        
+   		<div class="col-sm-offset-2 col-sm-10">
+     	 	<button  class="btn btn-default" id="login_btn">Submit</button>
+    	</div>
+  	</div>
+  </form>
+
+</div>

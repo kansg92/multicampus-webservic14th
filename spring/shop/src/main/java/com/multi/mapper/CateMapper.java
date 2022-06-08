@@ -16,4 +16,7 @@ public interface CateMapper {
 	
 	public CateVO select(int id) throws Exception;
 	public List<CateVO> selectAll() throws Exception;
+	public List<CateVO> selectmain() throws Exception;
+	
+
 }

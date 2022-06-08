@@ -1,5 +1,7 @@
 package com.multi.cate;
 
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -8,7 +10,7 @@ import com.multi.biz.CateBiz;
 import com.multi.vo.CateVO;
 
 @SpringBootTest
-class InsertTest {
+class SelectAllTest {
 	
 	@Autowired
 	CateBiz biz;
@@ -17,15 +19,18 @@ class InsertTest {
 	void contextLoads() {
 		
 		
-		CateVO cust = new CateVO(201, "Pants",200);
+		List<CateVO> cust = null;
 		
 		try {
-			biz.register(cust);
-			System.out.println("완료");
+			cust = biz.get();
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		for (CateVO custVO : cust) {
+			System.out.println(custVO);
+		}
+		
 	}
 
 }

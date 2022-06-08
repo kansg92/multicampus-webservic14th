@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Repository;
 
+import com.multi.vo.ProductAVGVO;
 import com.multi.vo.ProductVO;
 
 @Mapper
@@ -15,7 +16,9 @@ public interface ProductMapper {
 	public void update(ProductVO p) throws Exception;
 	
 	public ProductVO select(int id) throws Exception;
-	public List<ProductVO> selectAll() throws Exception;
+	public List<ProductVO> selectAll() throws Exception;	
+	public List<ProductVO> selectAll2() throws Exception;
 	
+	public List<ProductAVGVO> cateavg() throws Exception;
 	public int selectcnt() throws Exception;
 }
