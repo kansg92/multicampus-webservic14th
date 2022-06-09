@@ -10,7 +10,7 @@ public class ProductController {
 	
 	@RequestMapping("/select")
 	public String select(Model m) {
-		m.addAttribute("center","productselect");
+		m.addAttribute("center","product/select");
 		
 		return "index";
 	}

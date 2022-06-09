@@ -3,9 +3,7 @@
 
               <!-- Page Heading -->
  <h1 class="h3 mb-2 text-gray-800">Cust Tables</h1>
- <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-     For more information about DataTables, please visit the <a target="_blank"
-         href="https://datatables.net">official DataTables documentation</a>.</p>
+
 
  <!-- DataTales Example -->
  <div class="card shadow mb-4">
@@ -18,28 +16,23 @@
                  <thead>
                      <tr>
                          <th>ID</th>
-                         <th>PWD</th>
-                         <th>NAME</th>
-                         <th>ADDR</th>
-                         <th>REGDATE</th>
+                         <th>Name</th>
+                         <th>PID</th>
                      </tr>
                  </thead>
                  <tfoot>
                      <tr>
                          <th>ID</th>
-                         <th>PWD</th>
-                         <th>NAME</th>
-                         <th>ADDR</th>
-                         <th>REGDATE</th>
+                         <th>Name</th>
+                         <th>PID</th>
                      </tr>
                  </tfoot>
                  <tbody>
-                     <tr>
-                         <td>ID</td>
-                         <td>PWD</td>
-                         <td>NAME</td>
-                         <td>ADDR</td>
-                         <td>REGDATE</td>
+                     <tr th:each="c:${cate}">
+                     	<!--  /cust/detail?id=id -->
+                         <td><a th:text="${c.id}" th:href="@{detail(id=${c.id})}">ID</a></td>
+                         <td th:text="${c.name}">Name</td>
+                         <td th:text="${c.pid}">Pid</td>
                      </tr>
                  </tbody>
              </table>

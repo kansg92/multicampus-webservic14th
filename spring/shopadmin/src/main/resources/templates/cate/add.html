@@ -1,0 +1,74 @@
+<script>
+
+function sendID(id){
+	$.ajax({
+		url:'/checkcateid',
+		data:{'id':id},
+		success:function(data){
+			if(data == '1'){
+				$('#ispan').text('사용 불가능한 ID');
+			}else{
+				$('#ispan').text('사용 가능한 ID');
+			}
+		}
+	})
+};
+function sendName(id){
+	$.ajax({
+		url:'/checkcatename',
+		data:{'id':id},
+		success:function(data){
+			if(data == '1'){
+				$('#nspan').text('사용 불가능한 Name');
+			}else{
+				$('#nspan').text('사용 가능한 Name');
+			}
+		}
+	})
+};
+
+$(document).ready(function(){
+	$('input[name="id"]').keyup(function(){
+		var id = $(this).val();
+		sendID(id);
+	});
+
+	
+	$('#register_btn').click(function(){
+		$('.user').attr({
+			'method' : 'post',
+			'action' : 'addimpl'
+		});
+		$('.user').submit();
+	});
+	
+});
+</script>
+ <meta charset="utf-8">
+
+<div class="col-lg-6">
+    <div class="p-5">
+        <div class="text-center">
+            <h1 class="h4 text-gray-900 mb-4">Category Register</h1>
+        </div>
+        <form class="user">
+            <div class="form-group">
+                ID <span id="ispan"></span><input type="text" class="form-control form-control-user"
+                    name="id" >
+            </div>
+            <div class="form-group">
+                NAME<span id="nspan"></span><input type="text" class="form-control form-control-user"
+                    name="name" >
+            </div>
+            <div class="form-group">
+                PID<input type="text" class="form-control form-control-user"
+                    name="pid"  >
+            </div>
+                     
+            <a  id="register_btn" class="btn btn-primary btn-user btn-block">
+                Register
+            </a>
+        </form>
+
+    </div>
+</div>
