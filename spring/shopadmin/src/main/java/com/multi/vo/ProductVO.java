@@ -2,6 +2,8 @@ package com.multi.vo;
 
 import java.util.Date;
 
+import org.springframework.web.multipart.MultipartFile;
+
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -22,7 +24,8 @@ public class ProductVO {
 	private String imgname;
 	private String catename;
 	private String maincatename;
-
+	private MultipartFile mf;
+	
 	public ProductVO(String name, int price, int cid, String imgname) {
 		this.name = name;
 		this.price = price;
@@ -30,13 +33,7 @@ public class ProductVO {
 		this.imgname = imgname;
 	}
 
-	public ProductVO(String name, int price, Date regdate, int cid, String imgname) {
-		this.name = name;
-		this.price = price;
-		this.regdate = regdate;
-		this.cid = cid;
-		this.imgname = imgname;
-	}
+
 	
 	
 }

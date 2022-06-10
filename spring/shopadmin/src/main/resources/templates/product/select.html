@@ -1,10 +1,14 @@
+<style>
+	td > img {
+		width: 50px;
+	}
+</style>
+
 <div class="container-fluid">
 
               <!-- Page Heading -->
  <h1 class="h3 mb-2 text-gray-800">Product Tables</h1>
- <p class="mb-4">DataTables is a third party plugin that is used to generate the demo table below.
-     For more information about DataTables, please visit the <a target="_blank"
-         href="https://datatables.net">official DataTables documentation</a>.</p>
+
 
  <!-- DataTales Example -->
  <div class="card shadow mb-4">
@@ -20,10 +24,8 @@
                          <th>NAME</th>
                          <th>PRICE</th>
                          <th>REGDATE</th>
-                         <th>CID</th>
+                         <th>CATEGORY</th>  
                          <th>IMGNAME</th>
-                         <th>CATENAME</th>
-                         <th>MAINCATENAME</th>
                      </tr>
                  </thead>
                  <tfoot>
@@ -32,22 +34,20 @@
                          <th>NAME</th>
                          <th>PRICE</th>
                          <th>REGDATE</th>
-                         <th>CID</th>
+                         <th>CATEGORY</th>
                          <th>IMGNAME</th>
-                         <th>CATENAME</th>
-                         <th>MAINCATENAME</th>
+
+  
                      </tr>
                  </tfoot>
                  <tbody>
-                     <tr>
-                         <td>Tiger Nixon</td>
-                         <td>System Architect</td>
-                         <td>Edinburgh</td>
-                         <td>61</td>
-                         <td>2011/04/25</td>
-                         <td>$320,800</td>
-                         <td>$320,800</td>
-                         <td>$320,800</td>
+                     <tr th:each="p:${plist}">2
+                         <td ><a href="#" th:href="@{detail(id=${p.id})}" th:text="${p.id}" ></a></td>
+                         <td th:text="${p.name}">name</td>
+                         <td th:text="${p.price}">price</td>
+                         <td th:text="${#dates.format(p.regdate,'yyyy/MM/dd')}">regdate</td>
+                         <td th:text="${p.catename}">category</td>
+                         <td ><img src="../" th:src="@{/img/}+ ${p.imgname}"></td>
                      </tr>
                     
                  </tbody>

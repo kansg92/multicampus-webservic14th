@@ -19,6 +19,14 @@ public class CateController {
 	
 	@RequestMapping("/add")
 	public String add (Model m ) {
+		List<CateVO> list = null;
+		try {
+			list=biz.get();
+			m.addAttribute("alist",list);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		m.addAttribute("center","cate/add");
 		
 		return "index";
@@ -54,8 +62,11 @@ public class CateController {
 	@RequestMapping("/detail")
 	public String detail(Model m, int id) {
 		CateVO cate = null;
+		List<CateVO> list = null;
 		try {
 			cate = biz.get(id);
+			list = biz.getmain();
+			m.addAttribute("slist",list);
 			m.addAttribute("dObj",cate);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
@@ -77,5 +88,18 @@ public class CateController {
 		}
 		m.addAttribute("center","cate/detail");
 		return "redirect:detail?id="+obj.getId();
+	}
+	
+	@RequestMapping("/delete")
+	public String delete (int id, Model m) {	
+		try {
+			biz.remove(id);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+
+
+		}
+		return "redirect:select";
 	}
 }

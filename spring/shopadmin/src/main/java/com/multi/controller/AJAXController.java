@@ -1,5 +1,7 @@
 package com.multi.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -37,12 +39,14 @@ public class AJAXController {
 	}
 	
 	@RequestMapping("checkcateid")
-	public String checkcateid(int id) {
+	public String checkcateid(String id) {
 		String result = "";
 		CateVO c = null;
 		
+		
+		
 		try {
-			c= catebiz.get(id);
+			c= catebiz.get(Integer.parseInt(id));
 			if(c == null) {
 				result="0";
 			}else {
@@ -59,6 +63,14 @@ public class AJAXController {
 	public String checkcatename(int id) {
 		String result = "";
 		CateVO c = null;
+		List<CateVO> li = null;
+		try {
+			li = catebiz.get();
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		
 		
 		try {
 			c= catebiz.get(id);

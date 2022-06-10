@@ -1,6 +1,16 @@
 <script>
 $(document).ready(function(){
 	
+	$('#deletebtn').click(function(){
+		var c = confirm('삭제 하시겠습니까?');
+		var id = $('input[name="id"]').val();
+		if(c == true){
+			console.log("test");
+			location.href='delete?id='+id;
+		}
+	});
+	
+	
 	$('#update').click(function(){
 		$('.user').attr({
 			'method' : 'post',
@@ -11,12 +21,13 @@ $(document).ready(function(){
 	
 });
 </script>
-
+  <meta charset="utf-8">
 
 <div class="col-lg-6">
     <div class="p-5">
         <div class="text-center">
             <h1 class="h4 text-gray-900 mb-4">Category Information</h1>
+            <h1 th:if = "${msg != null}" th:text="${msg}"></h1>
         </div>
         <form class="user">
             <div class="form-group">
@@ -28,13 +39,24 @@ $(document).ready(function(){
                     name="name"  value="pwd01"th:value="${dObj.name}">
             </div>
             <div class="form-group">
-                PID<input type="text" class="form-control form-control-user"
-                    name="pid"  value="name"  th:value="${dObj.pid}">
+             PID
+             	<select name="pid" class="form-control form-control-item">
+                	<option value="">null</option>
+                	<option 
+                		th:each="a : ${slist}"
+              			th:value="${a.id}"
+              			th:text="${a.id}+ ': ' + ${a.name}"
+              			
+              			>
+              			<!-- th:selected="${c.pid} == ${a.id}" -->
+             		</option>            			
+                </select>
             </div>                      
             <a  id="update" class="btn btn-primary btn-user btn-block">
                 Update
             </a>
-            <a href="delete" class="btn btn-danger btn-user btn-block">
+            <a href="#" id="deletebtn"
+            class="btn btn-danger btn-user btn-block">
                 Delete
             </a>
 
