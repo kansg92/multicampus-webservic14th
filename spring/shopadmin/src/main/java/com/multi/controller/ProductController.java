@@ -85,14 +85,25 @@ public class ProductController {
 		m.addAttribute("center","product/detail");
 		return "/index";
 	}
+	
 	@RequestMapping("/update")
 	public String update(ProductVO p, Model m) {
-		String imgname = p.getMf().getOriginalFilename();
-		p.setImgname(imgname);
+		
+//		String iname = p.getMf().getOriginalFilename();
+//		if(iname.equals("") || iname != null) {
+//			p.setImgname(iname);
+//			Util.saveFile(p.getMf());	
+//		}
+		
+		if (!(p.getMf().isEmpty())) {
+			String imgname = p.getMf().getOriginalFilename();
+			p.setImgname(imgname);	
+			Util.saveFile(p.getMf());
+		}		
 		
 		try {
 			biz.modify(p);
-			Util.saveFile(p.getMf());
+			
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

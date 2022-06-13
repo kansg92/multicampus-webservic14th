@@ -42,5 +42,13 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<delete id="delete" parameterType="int">
 		DELETE FROM product WHERE ID=#{id}
 	</delete>	
+	<select id="searchName" parameterType="String" resultType="ProductVO">
+		SELECT prod.id, prod.name, prod.price, prod.regdate,
+		prod.cid, prod.imgname, cate.name AS cateName
+		FROM product prod 
+		INNER JOIN cate cate ON cate.id = prod.cid
+		WHERE prod.name 
+		LIKE CONCAT('%',#{txt},'%')
+	</select>	
 
 </mapper>

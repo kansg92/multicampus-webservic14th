@@ -33,7 +33,7 @@ public class MainController {
 		if(session != null) {
 			session.invalidate();
 		}
-		return "main";
+		return "/index";
 	}
 	
 	

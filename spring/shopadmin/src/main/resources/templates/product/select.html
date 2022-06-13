@@ -41,7 +41,7 @@
                      </tr>
                  </tfoot>
                  <tbody>
-                     <tr th:each="p:${plist}">2
+                     <tr th:each="p:${plist}">
                          <td ><a href="#" th:href="@{detail(id=${p.id})}" th:text="${p.id}" ></a></td>
                          <td th:text="${p.name}">name</td>
                          <td th:text="${p.price}">price</td>

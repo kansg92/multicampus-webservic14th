@@ -64,5 +64,9 @@ public class ProductBiz implements Biz<Integer, ProductVO> {
 		return dao.selectcnt();
 	}
 	
+	public List<ProductVO> searchName(String name) throws Exception{
+		return dao.searchName(name);
+	}
+	
 
 }

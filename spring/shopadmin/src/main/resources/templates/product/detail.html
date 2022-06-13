@@ -29,6 +29,10 @@ $(document).ready(function(){
             <h1 class="h4 text-gray-900 mb-4">Product Detail</h1>
         </div>
         <form class="user">
+         	<div class="form-group">
+         		<img src="../" th:src="@{/img/}+ ${dlist.imgname}"> 
+                <input type="hidden" name="imgname" th:value="${dlist.imgname}">  
+         	</div>
             <div class="form-group">
                 ID: <span id="ispan"></span><input type="text" class="form-control form-control-user"
                     name="id" readonly="readonly" th:value="${dlist.id}" >
@@ -55,10 +59,8 @@ $(document).ready(function(){
             </div>
             <div class="form-group">
             	IMG
-
                 <input type="file" class="form-control form-control-user"
-                    name="mf" th:value="@{/img/}+ ${dlist.imgname}" >
-                <img src="../" th:src="@{/img/}+ ${dlist.imgname}">          
+                    name="mf" >    
             </div>
                      
             <a  id="update" class="btn btn-primary btn-user btn-block">

@@ -2,14 +2,22 @@ package com.multi.controller;
 
 import java.util.List;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.databind.jsonFormatVisitors.JsonArrayFormatVisitor;
 import com.multi.biz.CateBiz;
 import com.multi.biz.CustBiz;
+import com.multi.biz.ProductBiz;
 import com.multi.vo.CateVO;
 import com.multi.vo.CustVO;
+import com.multi.vo.ProductAVGVO;
+import com.multi.vo.ProductAVGVO;
+import com.multi.vo.ProductVO;
 
 @RestController
 public class AJAXController {
@@ -18,6 +26,8 @@ public class AJAXController {
 	CustBiz custbiz;
 	@Autowired
 	CateBiz catebiz;
+	@Autowired
+	ProductBiz pbiz;
 	
 	@RequestMapping("checkid")
 	public String checkid(String id) {
@@ -84,5 +94,30 @@ public class AJAXController {
 			e.printStackTrace();
 		}	
 		return result;
+	}
+	
+	@RequestMapping("/chartimpl")
+	public Object chartimpl() {
+		//[{},{},{}......]
+		
+		JSONArray ja = new JSONArray();
+			
+		List<ProductAVGVO> list = null;
+		try {
+			list = pbiz.getCateAvg();
+			for (ProductAVGVO p : list) {
+				JSONObject jo = new JSONObject();
+				jo.put("name", p.getCatename());
+				jo.put("y",p.getAvgprice());
+				ja.add(jo);
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
+		return ja;
 	}
 }

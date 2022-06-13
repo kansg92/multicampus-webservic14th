@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import com.multi.mapper.MainMapper;
+import com.multi.vo.AdminVO;
 
 @Controller
 public class MainBiz {
@@ -25,5 +26,9 @@ public class MainBiz {
 	}
 	public int getCartCnt() throws Exception{
 		return dao.getcartcnt();
+	}
+	
+	public AdminVO getadmin(String id) throws Exception{
+		return dao.getadmin(id);
 	}
 }

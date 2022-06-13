@@ -6,7 +6,9 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	
 	
 <mapper namespace="com.multi.mapper.MainMapper">
+
 	
+		
 	<select id="getcustcnt" resultType="int" >
 		SELECT count(*) FROM cust
 	</select>
@@ -19,6 +21,10 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 	<select id="getcartcnt" resultType="int">
 		SELECT count(*) FROM cart
 	</select>
+	<select id="getadmin" resultType="adminVO" parameterType="String">
+		SELECT * FROM admin where id=#{id}
+	</select>
+
 	
 </mapper>
 
