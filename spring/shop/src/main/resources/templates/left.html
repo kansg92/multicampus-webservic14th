@@ -1,8 +1,8 @@
 <meta charset="UTF-8">
 
-<p><a href="/top">Top</a></p>
-<p><a href="/bottom">Bottom</a></p>
-<p><a href="/outer">Outer</a></p>
+<p th:each="cate:${leftcatelist}">
+	<a href="/top" th:text="${cate.name}">Top</a>
+</p>
 
 
 

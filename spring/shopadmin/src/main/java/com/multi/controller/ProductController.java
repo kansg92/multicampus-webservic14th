@@ -3,6 +3,7 @@ package com.multi.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -16,6 +17,12 @@ import com.multi.vo.ProductVO;
 @Controller
 @RequestMapping("/product")
 public class ProductController {
+	
+	@Value("${admindir}")
+	String admindir;
+	
+	@Value("${userdir}")
+	String userdir;
 	
 	@Autowired
 	ProductBiz biz;
@@ -60,7 +67,7 @@ public class ProductController {
 		
 		try {
 			biz.register(p);
-			Util.saveFile(p.getMf());
+			Util.saveFile(p.getMf(), admindir, userdir);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -98,7 +105,7 @@ public class ProductController {
 		if (!(p.getMf().isEmpty())) {
 			String imgname = p.getMf().getOriginalFilename();
 			p.setImgname(imgname);	
-			Util.saveFile(p.getMf());
+			Util.saveFile(p.getMf(), admindir, userdir);
 		}		
 		
 		try {

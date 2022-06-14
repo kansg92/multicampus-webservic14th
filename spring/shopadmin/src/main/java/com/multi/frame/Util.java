@@ -4,21 +4,19 @@ import java.io.FileOutputStream;
 import org.springframework.web.multipart.MultipartFile;
 
 public class Util {
-	public static void saveFile(MultipartFile mf) {
-		String dir = "C:\\muticampus\\spring\\shopadmin\\src\\main\\resources\\static\\img\\";
-		String dir2 = "C:\\muticampus\\spring\\shop\\src\\main\\resources\\static\\img\\";
+	public static void saveFile(MultipartFile mf,String admindir, String userdir) {
 		byte [] data;
 		String imgname = mf.getOriginalFilename();
 		try {
 			data = mf.getBytes();
-			FileOutputStream fo = 
-					new FileOutputStream(dir+imgname);
-			fo.write(data);
-			fo.close();
-			FileOutputStream fo2 = 
-					new FileOutputStream(dir2+imgname);
-			fo2.write(data);
-			fo2.close();
+			FileOutputStream adminfo = 
+					new FileOutputStream(admindir+imgname);
+			adminfo.write(data);
+			adminfo.close();
+			FileOutputStream userfo = 
+					new FileOutputStream(userdir+imgname);
+			userfo.write(data);
+			userfo.close();
 		}catch(Exception e) {
 			
 		}

@@ -12,6 +12,13 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		INNER JOIN cate cate ON cate.id = prod.cid
 		WHERE prod.id=#{id}
 	</select>
+	<select id="selectproduct" parameterType="int" resultType="ProductVO">
+		SELECT prod.id, prod.name, prod.price, prod.regdate,
+		prod.cid, prod.imgname, cate.name AS cateName
+		FROM product prod
+		INNER JOIN cate cate ON cate.id = prod.cid
+		WHERE prod.cid=#{id}
+	</select>
 	<select id="selectcnt" resultType= "int">
 		SELECT LAST_INSERT_id() AS cnt
 	</select>

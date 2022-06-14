@@ -18,6 +18,7 @@ public interface ProductMapper {
 	public ProductVO select(int id) throws Exception;
 	public List<ProductVO> selectAll() throws Exception;	
 	public List<ProductVO> selectAll2() throws Exception;
+	public List<ProductVO> selectproduct(int id) throws Exception;
 	
 	public List<ProductAVGVO> cateavg() throws Exception;
 	public int selectcnt() throws Exception;

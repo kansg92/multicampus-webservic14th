@@ -34,6 +34,10 @@ public class AJAXController {
 		String result = "";
 		CustVO c = null;
 		
+		if(id.equals("") || id ==null) {
+			return "1";
+		}
+		
 		try {
 			c= custbiz.get(id);
 			if(c == null) {

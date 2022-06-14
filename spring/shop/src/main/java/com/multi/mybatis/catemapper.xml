@@ -9,6 +9,10 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 		SELECT * FROM cate WHERE ID=#{id}
 	</select>
 	
+	<select id="selectsub" parameterType="int" resultType="CateVO">
+		SELECT * FROM cate WHERE PID=#{id}
+	</select>
+	
 	<select id="selectmain" resultType="CateVO">
 		SELECT * FROM cate WHERE pid IS NULL
 	</select>

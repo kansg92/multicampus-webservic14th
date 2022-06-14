@@ -64,5 +64,10 @@ public class ProductBiz implements Biz<Integer, ProductVO> {
 		return dao.selectcnt();
 	}
 	
+	public List<ProductVO> selectproduct(int id) throws Exception {
+		// TODO Auto-generated method stub
+		return dao.selectproduct(id);
+		
+	}
 
 }
