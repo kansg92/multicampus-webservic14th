@@ -5,6 +5,10 @@ PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
 
 <mapper namespace="com.multi.mapper.CartMapper">
 
+	<select id="selectucnt" resultType="int">
+		SELECT COUNT(*) FROM cart
+		WHERE uid=#{uid}
+	</select>
 	<select id="select" parameterType="int" resultType="CartVO">
 		SELECT cart.id, cart.uid, cart.pid, prod.name as pname, prod.price as pprice,
 		cate.name as catename,cart.regdate,cart.cnt 

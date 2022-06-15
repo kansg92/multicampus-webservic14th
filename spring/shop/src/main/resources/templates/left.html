@@ -1,7 +1,7 @@
 <meta charset="UTF-8">
 
 <p th:each="cate:${leftcatelist}">
-	<a href="/top" th:text="${cate.name}">Top</a>
+	<a th:href="@{/getproduct(id=${cate.id},name=${cate.name})}" th:text="${cate.name}">Top</a>
 </p>
 
 

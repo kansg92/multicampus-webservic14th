@@ -45,4 +45,8 @@ public class CartBiz implements Biz<Integer, CartVO> {
 		return dao.selectAll();
 	}
 
+	public int selectucnt(String id) throws Exception{
+		return dao.selectucnt(id);
+	}
+	
 }

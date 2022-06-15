@@ -68,13 +68,16 @@
 	      </ul>
 	      
 	      <ul class="nav navbar-nav navbar-right">
+	    	
     		<li th:if="${session.logincust} == null"><a href="/register"><span class="glyphicon glyphicon-log-in">
 	      		</span> Register</a></li>	      	
     		<li th:if="${session.logincust} == null"><a href="/login"><span class="glyphicon glyphicon-log-in">
 	      		</span> Login</a></li>
+      		<li th:unless="${session.logincust} == null"><a href="/cart" >Cart <span th:text="${session.cartucnt}"></span></a></li>
 	      	<li th:unless="${session.logincust} == null"><a href="/logout">
 	      		<span  th:text="${session.logincust.name}"></span>
 			<span  class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+			
 	      </ul>
 	      
 

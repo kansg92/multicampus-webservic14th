@@ -1,0 +1,24 @@
+<meta charset="UTF-8">
+<style>
+	#pimg{
+		width:250px;
+	}
+</style>
+
+
+<h1>Cart List.</h1>
+<hr>
+<div th:each="c:${cartlist}">
+	<div class="row row-no-gutters">
+	  <div class="col-sm-3">
+	  	</div>
+	  <div class="col-sm-6">
+	  	<h3 th:text="${c.id}"></h3>
+	  </div>
+	  <div class="col-sm-3">
+		<button type="button" class="btn btn-info " >Order</button>
+	  </div>		   
+	</div>
+	<hr>
+</div>
+

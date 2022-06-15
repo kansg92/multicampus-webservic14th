@@ -22,4 +22,12 @@ public class CartVO {
 	private String catename;
 	private Date regdate;
 	private int cnt;
+	public CartVO(String uid, int pid, int cnt) {
+		this.uid = uid;
+		this.pid = pid;
+		this.cnt = cnt;
+	}
+	
+	
+	
 }

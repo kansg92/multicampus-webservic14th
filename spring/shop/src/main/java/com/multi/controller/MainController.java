@@ -10,10 +10,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import com.multi.biz.CartBiz;
 import com.multi.biz.CateBiz;
 import com.multi.biz.CustBiz;
+import com.multi.biz.ProductBiz;
+import com.multi.vo.CartVO;
 import com.multi.vo.CateVO;
 import com.multi.vo.CustVO;
+import com.multi.vo.ProductVO;
 
 @Controller
 public class MainController {
@@ -24,8 +28,15 @@ public class MainController {
 	@Autowired
 	CateBiz catebiz;
 	
+	@Autowired
+	ProductBiz pbiz;
+	
+	@Autowired
+	CartBiz cartbiz;
+	
 	@ModelAttribute("catelist")
 	public List<CateVO> makemenu(){
+		// 모든페이지 메뉴에 보내기.
 		List<CateVO> catelist = null;
 		try {
 			catelist = catebiz.getmain();
@@ -69,6 +80,42 @@ public class MainController {
 		return "main";
 	}
 	
+	@RequestMapping("getproduct")
+	public String getproduct(Model m, int id, String name) {
+		List<ProductVO> plist = null;
+
+		try {
+			plist = pbiz.selectproduct(id);
+
+			m.addAttribute("plist",plist);
+			m.addAttribute("menu",name);
+			m.addAttribute("center","product");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return "main";
+	}
+	
+	@RequestMapping("/cart")
+	public String cart(Model m) {;
+		List<CartVO> cartlist = null;
+
+		try {
+			cartlist = cartbiz.get();
+			m.addAttribute("cartlist",cartlist);
+			
+			m.addAttribute("center","cart");
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return "main";
+	}
 
 	
 	@RequestMapping("/login")
@@ -83,13 +130,18 @@ public class MainController {
 	public String loginimpl(Model m, HttpSession session, String id, String pwd ) {
 		String next = "";
 		CustVO cust =null;
+		int cart = 0;
 		
 		try {
 			cust = custbiz.get(id);
+			cart = cartbiz.selectucnt(id);
 			if(cust != null) {
 				if(cust.getPwd().equals(pwd)) {
+					session.setAttribute("cartucnt", cart);
+					m.addAttribute("cartucnt",cart);
 					session.setAttribute("logincust", cust);
 					m.addAttribute("logincust",cust);
+			
 					next="loginok";
 				}else {
 					throw new Exception();
